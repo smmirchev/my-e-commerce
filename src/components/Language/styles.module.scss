@@ -1,0 +1,15 @@
+.selected-language {
+  color: crimson !important;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-text-gray-hover;
+  }
+}
+
+.language {
+  color: $color-text-gray;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-text-gray-hover;
+  }
+}

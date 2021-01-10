@@ -1,0 +1,16 @@
+// colours
+$color-primary: #008190;
+$color-dark-gray: #f2f2f2;
+
+$color-background-dark: #5e6163;
+$color-background-secondary: #2b8471;
+
+$color-text-white: #f8f8ff;
+$color-text-gray: #4d4f53;
+$color-text-gray-complementary: #464c78;
+
+$color-text-white-hover: darken($color-text-white, 3%);
+$color-text-gray-hover: darken($color-dark-gray, 5%);
+
+// size units
+$container-max-width: 1200px;

@@ -6,7 +6,7 @@ import { useIntl } from "react-intl"
 
 const Categories = () => {
   const categories = useStaticQuery(graphql`
-    query MyQuery {
+    query categories {
       allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/categories/" } }
       ) {

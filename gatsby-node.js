@@ -27,9 +27,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const result = await graphql(`
+  const Category = await graphql(`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/categories/" } }
+      ) {
         edges {
           node {
             fields {
@@ -41,13 +43,43 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  Category.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/templates/Category.js`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
+        slug: node.fields.slug,
+      },
+    })
+  })
+
+  ////////////
+
+  const Product = await graphql(`
+    query {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/products/" } }) {
+        edges {
+          node {
+            frontmatter {
+              id: product_id
+              categoryId: category_id
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  Product.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: `${node?.frontmatter?.categoryId}/${node?.frontmatter?.id}`,
+      component: path.resolve(`./src/templates/Product.js`),
+      context: {
         slug: node.fields.slug,
       },
     })

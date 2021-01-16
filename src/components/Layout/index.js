@@ -4,6 +4,12 @@ import Header from "@components/Header"
 import Footer from "@components/Footer"
 import styles from "./styles.module.scss"
 
+// get our fontawesome imports
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons"
+
+library.add(faSearch, faBars)
+
 const Layout = ({ children }) => {
   return (
     <div className={styles.app}>

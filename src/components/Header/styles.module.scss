@@ -1,5 +1,19 @@
 .header-wrapper {
   width: 100vw;
+  > div {
+    padding: 0 2rem;
+    &:last-child {
+      padding: 0.5rem 2rem;
+    }
+  }
+  @include md-down {
+    > div {
+      padding: 0 1rem;
+      &:last-child {
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
 }
 
 .top-navigation-wrapper {
@@ -8,7 +22,6 @@
 }
 
 .top-navigation-container {
-  // height: 2rem;
   .top-navigation {
     max-width: $container-max-width;
     display: flex;
@@ -28,6 +41,16 @@
         cursor: pointer;
       }
     }
+    @include md-down {
+      div:last-of-type {
+        margin-right: 0;
+      }
+    }
+    .desktop-navigation-link {
+      @include md-down {
+        display: none;
+      }
+    }
   }
 }
 
@@ -37,23 +60,87 @@
 }
 
 .bottom-navigation-container {
+  min-height: 52px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: $color-text-white;
+
   .bottom-left {
   }
   .bottom-middle {
+    .search-box {
+      border: 1px solid black;
+      display: flex;
+      background: $color-text-white;
+    }
+    input {
+      border: none;
+      outline: none;
+      background: $color-text-white;
+      padding: 0.5rem;
+    }
+    button {
+      border: 0;
+      background: $color-text-white;
+      outline: none;
+      cursor: pointer;
+    }
+    .font-awesome-icon {
+      color: $color-primary;
+    }
   }
-  .bottom-right {
+  .bottom-right-desktop {
     display: flex;
     font-size: 1.2rem;
     p {
-      margin-right: 2rem;
+      margin: 0;
+      padding: 0.4rem;
+      margin-right: 1.5rem;
       &:last-child {
         margin-right: 0;
       }
     }
   }
+  .bottom-right-mobile {
+    display: none;
+  }
+  @include md-down {
+    .bottom-right-desktop {
+      display: none;
+    }
+    .bottom-right-mobile {
+      display: block;
+    }
+  }
+  @include xs-down {
+    justify-content: flex-end;
+    .bottom-left {
+      margin-right: auto;
+    }
+    .bottom-middle {
+      margin-right: 1rem;
+      .search-box {
+        background: none;
+        border: none;
+      }
+      button {
+        background: none;
+      }
+      input {
+        display: none;
+      }
+      .font-awesome-icon {
+        color: $color-text-white;
+      }
+    }
+  }
+}
+
+.font-awesome-icon {
+  color: $color-text-white;
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 0.4rem;
 }

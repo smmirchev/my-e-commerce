@@ -5,18 +5,21 @@ import { useIntl } from "gatsby-plugin-intl"
 import Language from "@components/Language"
 import Container from "@components/Container"
 import Logo from "@components/Logo"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Header = () => {
   const intl = useIntl()
   return (
-    <header className={styles.headerWrapperr}>
+    <header className={styles.headerWrapper}>
       <div className={styles.topNavigationWrapper}>
         <Container>
           <div className={styles.topNavigationContainer}>
             <div className={styles.topNavigation}>
               <Language />
-              <Link to="/contact-us">Contact Us</Link>
-              <Link to="/help">
+              <Link to="/contact-us" className={styles.desktopNavigationLink}>
+                Contact Us
+              </Link>
+              <Link to="/help" className={styles.desktopNavigationLink}>
                 {intl.formatMessage({ id: "header.topNavigation.help" })}
               </Link>
             </div>
@@ -31,17 +34,31 @@ const Header = () => {
               <Logo link />
             </div>
             <div className={styles.bottomMiddle}>
-              <input
-                className="search-box"
-                placeholder="Java, Software, Game..."
-                type="search"
-                // onChange={event => this.props.searchField(event.target.value)}
-              ></input>
+              <div className={styles.searchBox}>
+                <input
+                  placeholder="Java, Software, Game..."
+                  type="search"
+                  // onChange={event => this.props.searchField(event.target.value)}
+                />
+                <button>
+                  <FontAwesomeIcon
+                    icon="search"
+                    className={styles.fontAwesomeIcon}
+                  />
+                </button>
+              </div>
             </div>
-            <div className={styles.bottomRight}>
+            <div className={styles.bottomRightDesktop}>
               <p>Categories</p>
               <p>Account</p>
               <p>Basket</p>
+            </div>
+            <div className={styles.bottomRightMobile}>
+              <FontAwesomeIcon
+                icon="bars"
+                size="30px"
+                className={styles.fontAwesomeIcon}
+              />
             </div>
           </div>
         </Container>

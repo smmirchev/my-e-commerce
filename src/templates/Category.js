@@ -3,16 +3,18 @@ import { graphql } from "gatsby"
 import SEO from "@components/SEO"
 import Layout from "@components/Layout"
 import Products from "@views/Category/Products"
+import styles from "./styles.module.scss"
+import Container from "@components/Container"
 
 const Category = ({ data }) => {
   const post = data?.markdownRemark
   return (
     <Layout>
       <SEO title={post?.frontmatter?.title} />
-      <div>
-        <h1>{post?.frontmatter?.title}</h1>
-      </div>
-      <Products currentCategory={data?.markdownRemark?.frontmatter?.id} />
+      <Container>
+        <h1 className={styles.templateHeading}>{post?.frontmatter?.title}</h1>
+        <Products currentCategory={data?.markdownRemark?.frontmatter?.id} />
+      </Container>
     </Layout>
   )
 }

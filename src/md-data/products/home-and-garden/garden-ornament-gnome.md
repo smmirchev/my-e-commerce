@@ -5,6 +5,6 @@ name: Garden Ornament Gnome
 description: a Description
 reviews: 52
 price: 14.99
-image: ../../static/images/categories-fashion.jpg
+image: ../../../static/images/categories-fashion.jpg
 imageAlt: ""
 ---

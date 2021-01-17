@@ -10,9 +10,9 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <div className={styles.homeWrapper}>
-      {/* <Container>
+      <Container>
         <Categories />
-      </Container> */}
+      </Container>
       <Cta />
     </div>
   </Layout>

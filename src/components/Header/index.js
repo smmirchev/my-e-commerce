@@ -49,7 +49,6 @@ const Header = () => {
               </div>
             </div>
             <div className={styles.bottomRightDesktop}>
-              <p>Categories</p>
               <p>Account</p>
               <p>Basket</p>
             </div>

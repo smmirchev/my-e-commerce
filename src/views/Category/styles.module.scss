@@ -1,0 +1,45 @@
+.products-wrapper {
+  color: $color-text-black;
+  padding: 0 2rem;
+}
+
+.product-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: unset;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-item {
+  margin: 0 1rem;
+  flex: 0 0 calc(25% - 2rem);
+  margin-bottom: 2rem;
+  h3 {
+    margin-top: 0.5rem;
+  }
+  a {
+    text-decoration: none;
+    color: $color-text-black;
+    &:hover {
+      color: $color-text-black-hover;
+      :global(.gatsby-image-wrapper) {
+        opacity: 95%;
+      }
+    }
+  }
+  @include lg-down {
+    flex: 0 0 calc(33.33333% - 2rem);
+  }
+  @include md-down {
+    flex: 0 0 calc(50% - 2rem);
+  }
+  @include xs-down {
+    flex: 0 0 calc(100% - 2rem);
+  }
+}
+
+.image-container {
+}

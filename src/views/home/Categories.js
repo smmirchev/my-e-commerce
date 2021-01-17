@@ -35,21 +35,25 @@ const Categories = () => {
   return (
     <div className={styles.categoriesWrapper}>
       <h1>Main Categories</h1>
-      <div className={styles.categoriesContent}>
+      <ul className={styles.categoriesList}>
         {categories?.allMarkdownRemark?.edges?.map(
           ({ node: { frontmatter: category } }) => (
-            <div className={styles.categoryContainer} key={category?.id}>
+            <li className={styles.categoryListItem} key={category?.id}>
               <Link to={`/${intl?.locale}/${category?.id}`}>
                 <Img
-                  fluid={category?.image?.childImageSharp?.fluid}
+                  // fluid={{category?.image?.childImageSharp?.fluid}, aspectRatio: 21 / 9}
+                  fluid={{
+                    ...category?.image?.childImageSharp?.fluid,
+                    aspectRatio: 1 / 1,
+                  }}
                   alt={category?.imageAlt}
                 />
-                <h3>{category?.title}</h3>
               </Link>
-            </div>
+              <h3>{category?.title}</h3>
+            </li>
           )
         )}
-      </div>
+      </ul>
     </div>
   )
 }

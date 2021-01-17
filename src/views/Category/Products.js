@@ -33,23 +33,46 @@ const Products = ({ currentCategory }) => {
   `)
 
   return (
-    <div>
-      {products?.allMarkdownRemark?.edges
-        ?.filter(
-          ({ node: { frontmatter: filteredProduct } }) =>
-            filteredProduct?.categoryId === currentCategory
-        )
-        .map(({ node: { frontmatter: product } }) => (
-          <div key={product?.id}>
-            <h3>{product?.name}</h3>
-            <Link to={`/${product?.categoryId}/${product?.id}`}>
-              <Img
-                fluid={product?.image?.childImageSharp?.fluid}
-                alt={product?.imageAlt}
-              />
-            </Link>
-          </div>
-        ))}
+    <div className={styles.productsWrapper}>
+      <ul className={styles.productList}>
+        {products?.allMarkdownRemark?.edges
+          ?.filter(
+            ({ node: { frontmatter: filteredProduct } }) =>
+              filteredProduct?.categoryId === currentCategory
+          )
+          .map(({ node: { frontmatter: product } }) => (
+            <li className={styles.listItem} key={product?.id}>
+              <Link to={`/${product?.categoryId}/${product?.id}`}>
+                <div className={styles.imageContainer}>
+                  <Img
+                    fluid={product?.image?.childImageSharp?.fluid}
+                    alt={product?.imageAlt}
+                  />
+                </div>
+                <h3>{product?.name}</h3>
+              </Link>
+            </li>
+          ))}
+        {/*  */}
+        {products?.allMarkdownRemark?.edges
+          ?.filter(
+            ({ node: { frontmatter: filteredProduct } }) =>
+              filteredProduct?.categoryId === currentCategory
+          )
+          .map(({ node: { frontmatter: product } }) => (
+            <li className={styles.listItem} key={product?.id}>
+              <Link to={`/${product?.categoryId}/${product?.id}`}>
+                <div className={styles.imageContainer}>
+                  <Img
+                    fluid={product?.image?.childImageSharp?.fluid}
+                    alt={product?.imageAlt}
+                  />
+                </div>
+                <h3>{product?.name}</h3>
+              </Link>
+            </li>
+          ))}
+      </ul>
     </div>
   )
 }

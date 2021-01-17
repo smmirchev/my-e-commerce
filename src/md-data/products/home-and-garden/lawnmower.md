@@ -5,6 +5,6 @@ name: Lawnmower
 description: a Description
 reviews: 106
 price: 74.99
-image: ../../static/images/categories-fashion.jpg
+image: ../../../static/images/categories-fashion.jpg
 imageAlt: ""
 ---

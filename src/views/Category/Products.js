@@ -13,7 +13,7 @@ const Products = ({ currentCategory }) => {
             frontmatter {
               id: product_id
               categoryId: category_id
-              name
+              nameEn: name_en
               description
               reviews
               price
@@ -49,29 +49,11 @@ const Products = ({ currentCategory }) => {
                     alt={product?.imageAlt}
                   />
                 </div>
-                <h3>{product?.name}</h3>
+                <h3>{product?.nameEn}</h3>
               </Link>
             </li>
           ))}
         {/*  */}
-        {products?.allMarkdownRemark?.edges
-          ?.filter(
-            ({ node: { frontmatter: filteredProduct } }) =>
-              filteredProduct?.categoryId === currentCategory
-          )
-          .map(({ node: { frontmatter: product } }) => (
-            <li className={styles.listItem} key={product?.id}>
-              <Link to={`/${product?.categoryId}/${product?.id}`}>
-                <div className={styles.imageContainer}>
-                  <Img
-                    fluid={product?.image?.childImageSharp?.fluid}
-                    alt={product?.imageAlt}
-                  />
-                </div>
-                <h3>{product?.name}</h3>
-              </Link>
-            </li>
-          ))}
       </ul>
     </div>
   )

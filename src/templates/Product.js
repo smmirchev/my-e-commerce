@@ -7,8 +7,8 @@ const Product = ({ data }) => {
   const post = data?.markdownRemark
   return (
     <Layout>
-      <SEO title={post?.frontmatter?.name} />
-      <h1>{post?.frontmatter?.name}</h1>
+      <SEO title={post?.frontmatter?.nameEn} />
+      <h1>{post?.frontmatter?.nameEn}</h1>
     </Layout>
   )
 }
@@ -20,7 +20,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        name
+        nameEn: name_en
         id
       }
     }

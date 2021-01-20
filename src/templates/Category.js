@@ -13,7 +13,10 @@ const Category = ({ data }) => {
       <SEO title={post?.frontmatter?.title} />
       <Container>
         <h1 className={styles.templateHeading}>{post?.frontmatter?.title}</h1>
-        <Products currentCategory={data?.markdownRemark?.frontmatter?.id} />
+        <Products
+          currentCategory={data?.markdownRemark?.frontmatter?.id}
+          repeat={true}
+        />
       </Container>
     </Layout>
   )

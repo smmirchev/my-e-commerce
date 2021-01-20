@@ -19,14 +19,14 @@
   margin-bottom: 2rem;
   h3 {
     margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
   }
   a {
     text-decoration: none;
     color: $color-text-black;
     &:hover {
-      color: $color-text-black-hover;
       :global(.gatsby-image-wrapper) {
-        opacity: 95%;
+        opacity: 90%;
       }
     }
   }
@@ -42,4 +42,27 @@
 }
 
 .image-container {
+  // :global(.gatsby-image-wrapper) {
+  // }
+}
+
+.list-item-middle {
+  display: flex;
+  p {
+    font-size: 0.9rem;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+  }
+  .font-awesome-icon {
+    color: $color-primary;
+  }
+}
+
+.price {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.2rem;
 }

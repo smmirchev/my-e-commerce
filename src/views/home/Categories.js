@@ -33,7 +33,7 @@ const Categories = () => {
   const intl = useIntl()
 
   return (
-    <div className={styles.categoriesWrapper}>
+    <section className={styles.categoriesWrapper}>
       <h1>Main Categories</h1>
       <ul className={styles.categoriesList}>
         {categories?.allMarkdownRemark?.edges?.map(
@@ -54,7 +54,7 @@ const Categories = () => {
           )
         )}
       </ul>
-    </div>
+    </section>
   )
 }
 

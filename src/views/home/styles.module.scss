@@ -5,6 +5,9 @@
   justify-self: center;
   color: $color-text-black;
   overflow-x: hidden;
+  section {
+    margin-bottom: 7rem;
+  }
 }
 
 .categories-wrapper {
@@ -13,6 +16,11 @@
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
+
+  h1 {
+    margin-bottom: 4rem;
+    font-size: 2rem;
+  }
 
   .categories-list {
     margin: 0;
@@ -91,7 +99,7 @@
   text-align: center;
   .cta-content {
     width: 100%;
-    padding: 2.5rem;
+    padding: 4rem;
     p {
       max-width: 800px;
       margin-left: auto;
@@ -104,4 +112,8 @@
       }
     }
   }
+}
+
+.featured-wrapper {
+  margin-bottom: 5rem !important;
 }

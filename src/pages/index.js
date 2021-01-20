@@ -5,6 +5,7 @@ import Categories from "@views/home/Categories"
 import styles from "@views/home/styles.module.scss"
 import Container from "@components/Container"
 import Cta from "@views/home/Cta"
+import FeaturedProducts from "@views/home/FeaturedProducts"
 
 const IndexPage = () => (
   <Layout>
@@ -14,6 +15,9 @@ const IndexPage = () => (
         <Categories />
       </Container>
       <Cta />
+      <Container>
+        <FeaturedProducts />
+      </Container>
     </div>
   </Layout>
 )

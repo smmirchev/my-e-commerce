@@ -2,8 +2,9 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby-plugin-intl"
 import styles from "./styles.module.scss"
-import Img from "gatsby-image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import Img from "gatsby-image"
+import Img from "gatsby-image/withIEPolyfill"
+import Reviews from "@components/reviews"
 
 const Products = ({ currentCategory, repeat = false }) => {
   const products = useStaticQuery(graphql`
@@ -50,30 +51,13 @@ const Products = ({ currentCategory, repeat = false }) => {
                   aspectRatio: 1 / 1,
                 }}
                 alt={product?.imageAlt}
+                objectFit="cover"
+                objectPosition="50% 50%"
               />
             </div>
             <h3>{product?.nameEn}</h3>
-            <div className={styles.listItemMiddle}>
-              <div>
-                <FontAwesomeIcon
-                  icon="star"
-                  className={styles.fontAwesomeIcon}
-                />
-                <FontAwesomeIcon
-                  icon="star"
-                  className={styles.fontAwesomeIcon}
-                />
-                <FontAwesomeIcon
-                  icon="star"
-                  className={styles.fontAwesomeIcon}
-                />
-                <FontAwesomeIcon
-                  icon="star"
-                  className={styles.fontAwesomeIcon}
-                />
-              </div>
-              <p>({product?.reviews})</p>
-            </div>
+            <Reviews reviewsNumber={product?.reviews} />
+
             <p className={styles.price}>£{product?.price}</p>
           </Link>
         </li>

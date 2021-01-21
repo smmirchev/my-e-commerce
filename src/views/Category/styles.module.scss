@@ -1,3 +1,9 @@
+.template-heading {
+  text-align: center;
+  color: $color-text-black;
+  margin-bottom: 4rem;
+}
+
 .products-wrapper {
   color: $color-text-black;
   padding: 0 2rem;
@@ -44,21 +50,6 @@
 .image-container {
   // :global(.gatsby-image-wrapper) {
   // }
-}
-
-.list-item-middle {
-  display: flex;
-  p {
-    font-size: 0.9rem;
-  }
-  > div {
-    display: flex;
-    align-items: center;
-    margin-right: 1rem;
-  }
-  .font-awesome-icon {
-    color: $color-primary;
-  }
 }
 
 .price {

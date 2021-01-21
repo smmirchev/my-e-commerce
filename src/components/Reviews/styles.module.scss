@@ -1,0 +1,14 @@
+.reviews-container {
+  display: flex;
+  p {
+    font-size: 0.9rem;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+  }
+  .font-awesome-icon {
+    color: $color-primary;
+  }
+}

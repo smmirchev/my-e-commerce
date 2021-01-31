@@ -1,8 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import styles from "./styles.module.scss"
 import Img from "gatsby-image"
 import { useIntl } from "react-intl"
+import styles from "./styles.module.scss"
 
 const Categories = () => {
   const categories = useStaticQuery(graphql`

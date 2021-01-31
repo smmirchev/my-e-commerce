@@ -49,7 +49,9 @@ const Header = () => {
               </div>
             </div>
             <div className={styles.bottomRightDesktop}>
-              <p>Account</p>
+              <Link to="/register" className={styles.desktopNavigationLink}>
+                Account
+              </Link>
               <p>Basket</p>
             </div>
             <div className={styles.bottomRightMobile}>

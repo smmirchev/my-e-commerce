@@ -10,8 +10,12 @@ const Reviews = ({ reviewsNumber }) => {
         <FontAwesomeIcon icon="star" className={styles.fontAwesomeIcon} />
         <FontAwesomeIcon icon="star" className={styles.fontAwesomeIcon} />
         <FontAwesomeIcon icon="star" className={styles.fontAwesomeIcon} />
+        <FontAwesomeIcon
+          icon="star"
+          className={`${styles.fontAwesomeIcon} ${styles.faded}`}
+        />
       </div>
-      <p>({reviewsNumber})</p>
+      <p>({reviewsNumber}) reviews</p>
     </div>
   )
 }

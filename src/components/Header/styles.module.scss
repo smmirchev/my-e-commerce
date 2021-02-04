@@ -113,6 +113,7 @@
     }
     .bottom-right-mobile {
       display: block;
+      padding: 0 1rem;
     }
   }
   @include xs-down {

@@ -7,8 +7,13 @@ import Layout from "@components/Layout/"
 import Container from "@components/Container/"
 import styles from "@views/login/styles.module.scss"
 import { USER_REGISTER } from "@functions/api/"
+import { createAction, createReducer, createSlice } from "@reduxjs/toolkit"
+import store from "../store/configureStore"
 
 const Register = () => {
+  //
+
+  //
   const initialValues = {
     username: "",
     email: "",

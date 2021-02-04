@@ -9,6 +9,7 @@ import ProductInformation from "@views/Product/ProductInformation"
 
 const Product = ({ data }) => {
   const product = data?.markdownRemark?.frontmatter
+  const description = data?.markdownRemark
   return (
     <Layout>
       <SEO title={product?.nameEn} />
@@ -17,12 +18,13 @@ const Product = ({ data }) => {
           <ProductOverview
             imageAlt={product?.imageAlt}
             image={product?.image}
-            description={product?.description}
+            description={description}
           />
           <ProductInformation
             titleEn={product?.nameEn}
             reviews={product?.reviews}
             price={product?.price}
+            category={product?.category}
           />
         </div>
       </Container>
@@ -44,7 +46,7 @@ export const query = graphql`
         nameDe: name_de
         reviews
         price
-        description
+        category: category_id
         imageAlt
         image {
           childImageSharp {

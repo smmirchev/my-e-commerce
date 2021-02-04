@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby-plugin-intl"
-import styles from "./styles.module.scss"
+import styles from "@views/category/styles.module.scss"
 // import Img from "gatsby-image"
 import Img from "gatsby-image/withIEPolyfill"
 import Reviews from "@components/reviews"

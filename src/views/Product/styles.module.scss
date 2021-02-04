@@ -27,10 +27,64 @@
 }
 
 .information-container {
+  padding: 0 1.5rem;
+  h1 {
+    margin-bottom: 0.7rem;
+  }
+  hr {
+    margin: 2rem 0;
+    color: $color-border;
+    border-bottom: 1px solid $color-border;
+  }
   .price {
     margin: 0;
     font-weight: 600;
+    font-size: 1.6rem;
+  }
+  .category {
+    color: $color-text-gray;
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 1.1rem;
+  }
+  .quantity-text {
+    font-weight: 600;
     font-size: 1.2rem;
+  }
+  .quantity-input-container {
+    display: flex;
+    height: 45px;
+    > * {
+      margin-right: 1rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    input {
+      width: 45px;
+      height: 100%;
+      padding: 0.5rem;
+      &:focus {
+        border: 2px solid $color-primary;
+        outline: $color-primary;
+      }
+    }
+    button {
+      width: 45px;
+      height: 100%;
+      border: none;
+      font-size: 1.3rem;
+      &:hover {
+        border: 2px solid $color-primary;
+        color: $color-primary;
+        cursor: pointer;
+      }
+    }
+    p {
+      font-size: 1.2rem;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
   }
 }
 

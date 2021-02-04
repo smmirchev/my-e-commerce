@@ -6,9 +6,14 @@ import styles from "./styles.module.scss"
 
 // get our fontawesome imports
 import { library } from "@fortawesome/fontawesome-svg-core"
-import { faSearch, faBars, faStar } from "@fortawesome/free-solid-svg-icons"
+import {
+  faSearch,
+  faBars,
+  faStar,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons"
 
-library.add(faSearch, faBars, faStar)
+library.add(faSearch, faBars, faStar, faPlus)
 
 const Layout = ({ children }) => {
   return (

@@ -18,7 +18,7 @@ const ProductOverview = ({ imageAlt, image, description }) => {
       </div>
       <div>
         <h2>Product Overview</h2>
-        <p>{description}</p>
+        <div dangerouslySetInnerHTML={{ __html: description.html }} />
       </div>
     </section>
   )

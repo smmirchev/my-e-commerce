@@ -2,6 +2,8 @@
   display: flex;
   p {
     font-size: 0.9rem;
+    color: $color-primary;
+    font-weight: 400;
   }
   > div {
     display: flex;
@@ -10,5 +12,8 @@
   }
   .font-awesome-icon {
     color: $color-primary;
+  }
+  .faded {
+    color: $color-text-light-gray;
   }
 }

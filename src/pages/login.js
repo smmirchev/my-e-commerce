@@ -7,42 +7,28 @@ import SEO from "@components/SEO"
 import Layout from "@components/Layout/"
 import Container from "@components/Container/"
 import styles from "@views/login/styles.module.scss"
-import { USER_REGISTER } from "@functions/api/"
+import { USER_LOGIN } from "@functions/api/"
 
-const Register = () => {
-  //
-
-  //
+const Login = () => {
   const initialValues = {
-    username: "",
     email: "",
     password: "",
-    confirmPassword: "",
   }
 
   const handleSubmit = async (values, actions) => {
     try {
-      const response = await axios.post(USER_REGISTER, values)
-      localStorage.setItem(
-        "e-commerce-token",
-        response?.headers["x-auth-token"]
-      )
+      const { data } = await axios.post(USER_LOGIN, values)
+      localStorage.setItem("e-commerce-token", data)
+      console.log({ data })
       navigate("/")
     } catch (error) {
       console.log(error)
     }
   }
 
-  //   useEffect(() => {
-  //     ;(async () => {
-  //       const { data } = await axios.get(COURSES)
-  //       console.log(data)
-  //     })()
-  //   }, [])
-
   return (
     <Layout>
-      <SEO title="Register" />
+      <SEO title="Login" />
       <Container>
         <div className={styles.loginRegisterWrapper}>
           <h1>Create an account</h1>
@@ -50,7 +36,7 @@ const Register = () => {
             validationSchema={yupObjectSchema}
             initialValues={initialValues}
             onSubmit={handleSubmit}
-            render={props => <RegisterForm {...props} formKey />}
+            render={props => <LoginForm {...props} formKey />}
             // validateOnBlur
             // validateOnChange
           />
@@ -60,9 +46,9 @@ const Register = () => {
   )
 }
 
-export default Register
+export default Login
 
-const RegisterForm = ({
+const LoginForm = ({
   handleSubmit,
   handleChange,
   handleBlur,
@@ -77,20 +63,6 @@ const RegisterForm = ({
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.formField}>
-        <label htmlFor="username">Username</label>
-        <input
-          id="username"
-          type="text"
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={values?.userName}
-          name="username"
-          placeholder="Type in your username"
-        />
-        {errors?.username && touched?.username && errors?.username}
-      </div>
-
-      <div className={styles.formField}>
         <label htmlFor="email">Email</label>
         <input
           id="email"
@@ -99,7 +71,7 @@ const RegisterForm = ({
           onBlur={handleBlur}
           value={values?.email}
           name="email"
-          placeholder="Type in your email"
+          placeholder="Your email..."
         />
         {errors?.email && touched?.email && errors?.email}
       </div>
@@ -113,25 +85,9 @@ const RegisterForm = ({
           onBlur={handleBlur}
           value={values?.password}
           name="password"
-          placeholder="Type in your password"
+          placeholder="Yur password..."
         />
         {errors?.password && touched?.password && errors?.password}
-      </div>
-
-      <div className={styles.formField}>
-        <label htmlFor="confirmPassword">Confirm Password</label>
-        <input
-          id="confirmPassword"
-          type="password"
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={values?.confirmPassword}
-          name="confirmPassword"
-          placeholder="Cofirm your password"
-        />
-        {errors?.confirmPassword &&
-          touched?.confirmPassword &&
-          errors?.confirmPassword}
       </div>
 
       <button type="submit" disabled={isSubmitting}>
@@ -142,7 +98,6 @@ const RegisterForm = ({
 }
 
 const yupObjectSchema = Yup.object().shape({
-  username: Yup.string().trim().required("Username is required"),
   email: Yup.string()
     .email("Must be a valid email")
     .trim()
@@ -150,7 +105,4 @@ const yupObjectSchema = Yup.object().shape({
   password: Yup.string()
     .min(5, "Password must be at least 5 characters long")
     .required("Password is required"),
-  confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password"), null], "Passwords must match")
-    .required("Confirm password is required"),
 })

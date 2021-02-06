@@ -33,17 +33,6 @@ const FeaturedProducts = () => {
     }
   `)
 
-  const pr = products?.allMarkdownRemark?.edges
-    ?.filter(
-      ({ node: { frontmatter: filteredProduct } }) =>
-        filteredProduct?.featured === true
-    )
-    .map(({ node: { frontmatter: product } }) => {
-      console.log(product)
-    })
-
-  console.log(pr)
-
   const ProductItem = () =>
     products?.allMarkdownRemark?.edges
       ?.filter(

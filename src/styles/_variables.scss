@@ -1,5 +1,6 @@
 // colours
 $color-primary: #008190;
+$color-primary-light: #d8ecee;
 $color-dark-gray: #f2f2f2;
 
 $color-background-dark: #5e6163;
@@ -11,6 +12,7 @@ $color-text-gray: #4d4f53;
 $color-text-light-gray: #707070;
 $color-text-gray-complementary: #464c78;
 
+$color-primary-hover: lighten($color-primary, 50%);
 $color-text-white-hover: darken($color-text-white, 4%);
 $color-text-gray-hover: darken($color-dark-gray, 5%);
 $color-background-dark-hover: lighten($color-background-dark, 3%);

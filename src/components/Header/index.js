@@ -1,7 +1,9 @@
-import React from "react"
-import styles from "./styles.module.scss"
+import { useSelector } from "react-redux"
+import { navigate } from "gatsby"
 import { Link } from "gatsby-plugin-intl"
 import { useIntl } from "gatsby-plugin-intl"
+import React from "react"
+import styles from "./styles.module.scss"
 import Language from "@components/Language"
 import Container from "@components/Container"
 import Logo from "@components/Logo"
@@ -9,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Header = () => {
   const intl = useIntl()
+  const user = useSelector(state => state.user)
   return (
     <header className={styles.headerWrapper}>
       <div className={styles.topNavigationWrapper}>
@@ -49,10 +52,33 @@ const Header = () => {
               </div>
             </div>
             <div className={styles.bottomRightDesktop}>
-              <Link to="/register" className={styles.desktopNavigationLink}>
-                Account
-              </Link>
-              <p>Basket</p>
+              <div className={styles.desktopDropdown}>
+                <p>Account</p>
+                {!!user ? (
+                  <div>
+                    <p
+                      className={styles.greeting}
+                    >{`Hello ${user?.username}`}</p>
+                    <button
+                      className={styles.logoutButton}
+                      onClick={() => {
+                        localStorage.removeItem("e-commerce-token")
+                        navigate("/")
+                      }}
+                    >
+                      Log out
+                    </button>
+                  </div>
+                ) : (
+                  <div>
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Register</Link>
+                  </div>
+                )}
+              </div>
+              <div className={styles.desktopDropdown}>
+                <p>Basket</p>
+              </div>
             </div>
             <div className={styles.bottomRightMobile}>
               <FontAwesomeIcon

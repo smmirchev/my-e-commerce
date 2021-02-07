@@ -34,12 +34,10 @@ module.exports = {
       options: {
         alias: {
           "@components": path.resolve(__dirname, "src/components"),
-          // "@reducers": path.resolve(__dirname, "src/reducers"),
           "@functions": path.resolve(__dirname, "src/functions"),
           "@styles": path.resolve(__dirname, "src/styles"),
-          // "@images": path.resolve(__dirname, "src/images"),
           "@views": path.resolve(__dirname, "src/views"),
-          // "@store": path.resolve(__dirname, "src/store"),
+          "@store": path.resolve(__dirname, "src/store"),
         },
         extensions: [],
       },

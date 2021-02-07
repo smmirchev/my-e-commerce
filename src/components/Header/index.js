@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { navigate } from "gatsby"
 import { Link } from "gatsby-plugin-intl"
 import { useIntl } from "gatsby-plugin-intl"
@@ -7,7 +8,7 @@ import styles from "./styles.module.scss"
 import Language from "@components/Language"
 import Container from "@components/Container"
 import Logo from "@components/Logo"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import BasketProducts from "@components/BasketProducts"
 
 const Header = () => {
   const intl = useIntl()
@@ -78,6 +79,9 @@ const Header = () => {
               </div>
               <div className={styles.desktopDropdown}>
                 <p>Basket</p>
+                <div>
+                  <BasketProducts />
+                </div>
               </div>
             </div>
             <div className={styles.bottomRightMobile}>

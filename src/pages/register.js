@@ -1,18 +1,20 @@
-import { navigate } from "gatsby"
+import { navigate } from "gatsby-plugin-intl"
+import jwtDecode from "jwt-decode"
+import { useDispatch } from "react-redux"
 import axios from "axios"
 import { Formik } from "formik"
 import * as Yup from "yup"
-import React, { useEffect, useState } from "react"
+import React from "react"
 import SEO from "@components/SEO"
 import Layout from "@components/Layout/"
 import Container from "@components/Container/"
 import styles from "@views/login/styles.module.scss"
 import { USER_REGISTER } from "@functions/api/"
+import { loginUser } from "@store/user"
 
 const Register = () => {
-  //
+  const dispatch = useDispatch()
 
-  //
   const initialValues = {
     username: "",
     email: "",
@@ -27,18 +29,15 @@ const Register = () => {
         "e-commerce-token",
         response?.headers["x-auth-token"]
       )
+
+      const user = jwtDecode(response?.headers["x-auth-token"])
+      dispatch(loginUser(user))
+
       navigate("/")
     } catch (error) {
       console.log(error)
     }
   }
-
-  //   useEffect(() => {
-  //     ;(async () => {
-  //       const { data } = await axios.get(COURSES)
-  //       console.log(data)
-  //     })()
-  //   }, [])
 
   return (
     <Layout>

@@ -3,11 +3,14 @@ import store from "./configureStore"
 
 const userSlice = createSlice({
   name: "user",
-  initialState: 0,
+  initialState: null,
   reducers: {
     login: (state, action) => {
       const { payload } = action
       return payload
+    },
+    update: (state, action) => {
+      return action.payload
     },
   },
 })
@@ -16,11 +19,15 @@ const userSlice = createSlice({
 export default userSlice.reducer
 
 // Actions
-const { login } = userSlice.actions
+const { login, update } = userSlice.actions
 
 // Thunks
 export const loginUser = user => dispatch => {
   dispatch(login(user))
+}
+
+export const updateUser = user => dispatch => {
+  dispatch(update(user))
 }
 
 // let lastId = 0

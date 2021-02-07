@@ -11,9 +11,10 @@ import {
   faBars,
   faStar,
   faPlus,
+  faMinus,
 } from "@fortawesome/free-solid-svg-icons"
 
-library.add(faSearch, faBars, faStar, faPlus)
+library.add(faSearch, faBars, faStar, faPlus, faMinus)
 
 const Layout = ({ children }) => {
   return (

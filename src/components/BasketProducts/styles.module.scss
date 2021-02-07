@@ -1,0 +1,50 @@
+.basket-products-wrapper {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  hr {
+    margin: 1rem 0;
+    color: $color-border;
+    border-bottom: 1px solid $color-border;
+  }
+}
+
+.product-wrapper {
+  background-color: pink;
+  display: flex;
+  color: $color-text-black;
+  p {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+  .product-price {
+    font-weight: 600;
+  }
+
+  .quantity-container {
+    display: flex;
+    button {
+      width: 45px;
+      height: 100%;
+      border: none;
+      font-size: 1.3rem;
+      outline: none;
+      margin-left: 1rem;
+      &:hover {
+        border: 2px solid $color-primary;
+        color: $color-primary;
+        cursor: pointer;
+      }
+    }
+  }
+
+  :global(.gatsby-image-wrapper) {
+    width: 70px;
+    height: 70px;
+  }
+  > div {
+    &:last-child {
+      margin-left: 1rem;
+    }
+  }
+}

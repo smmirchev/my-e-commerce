@@ -25,6 +25,7 @@ const Product = ({ data }) => {
             reviews={product?.reviews}
             price={product?.price}
             category={product?.category}
+            id={product?.id}
           />
         </div>
       </Container>

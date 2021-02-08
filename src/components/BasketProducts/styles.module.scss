@@ -1,16 +1,19 @@
 .basket-products-wrapper {
   display: flex;
   flex-direction: column;
-  z-index: 2;
+  z-index: 4;
+  margin: 1rem 0;
   hr {
     margin: 1rem 0;
     color: $color-border;
     border-bottom: 1px solid $color-border;
+    &:last-child {
+      display: none;
+    }
   }
 }
 
 .product-wrapper {
-  background-color: pink;
   display: flex;
   color: $color-text-black;
   p {

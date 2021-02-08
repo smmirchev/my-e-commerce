@@ -4,6 +4,7 @@ export const USER_LOGIN = `${API_ROUTE}login/`
 export const USER_REGISTER = `${API_ROUTE}register/`
 
 export const BASKET = `${API_ROUTE}basket/`
+export const BASKET_PRODUCT = id => `${API_ROUTE}basket/${id}`
 
 export const COURSES = `${API_ROUTE}courses/`
 

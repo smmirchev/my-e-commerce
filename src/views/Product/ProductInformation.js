@@ -46,7 +46,9 @@ const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
         </button>
       </div>
       <hr />
-      <button onClick={() => addToBasket()}>Add to basket</button>
+      <button className={styles.basketButton} onClick={() => addToBasket()}>
+        Add to basket
+      </button>
     </section>
   )
 }

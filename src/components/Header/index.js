@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { navigate } from "gatsby"
 import { Link } from "gatsby-plugin-intl"
 import { useIntl } from "gatsby-plugin-intl"
-import React from "react"
+import React, { useState } from "react"
 import styles from "./styles.module.scss"
 import Language from "@components/Language"
 import Container from "@components/Container"
@@ -13,8 +13,14 @@ import BasketProducts from "@components/BasketProducts"
 const Header = () => {
   const intl = useIntl()
   const user = useSelector(state => state.user)
+  const [showBasketOverlay, setShowBasketOverlay] = useState(false)
+  const [showAccountOverlay, setShowAccountOverlay] = useState(false)
+
   return (
     <header className={styles.headerWrapper}>
+      {(showAccountOverlay || showBasketOverlay) && (
+        <div className={styles.fadePage}></div>
+      )}
       <div className={styles.topNavigationWrapper}>
         <Container>
           <div className={styles.topNavigationContainer}>
@@ -53,7 +59,13 @@ const Header = () => {
               </div>
             </div>
             <div className={styles.bottomRightDesktop}>
-              <div className={styles.desktopDropdown}>
+              <div
+                className={`${styles.desktopDropdown} ${
+                  showBasketOverlay ? styles.lowerZIndex : ""
+                }`}
+                onMouseEnter={() => setShowAccountOverlay(true)}
+                onMouseLeave={() => setShowAccountOverlay(false)}
+              >
                 <p>Account</p>
                 {!!user ? (
                   <div>
@@ -77,10 +89,20 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              <div className={styles.desktopDropdown}>
+              <div
+                className={`${styles.desktopDropdown} ${
+                  showAccountOverlay ? styles.lowerZIndex : ""
+                }`}
+                onMouseEnter={() => setShowBasketOverlay(true)}
+                onMouseLeave={() => setShowBasketOverlay(false)}
+              >
                 <p>Basket</p>
                 <div>
-                  <BasketProducts />
+                  {!!user ? (
+                    <BasketProducts />
+                  ) : (
+                    <p>Login to view your basket</p>
+                  )}
                 </div>
               </div>
             </div>

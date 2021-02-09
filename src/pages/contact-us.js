@@ -1,12 +1,15 @@
 import React from "react"
 import SEO from "@components/SEO"
 import Layout from "@components/Layout/"
+import AdditionalPage from "@components/AdditionalPage/"
 
-const ContactUs = () => (
-  <Layout>
-    <SEO title="Contact Us" />
-    <h1>Contact Us</h1>
-  </Layout>
-)
+const ContactUs = () => {
+  return (
+    <Layout>
+      <SEO title="Contact Us" />
+      <AdditionalPage title={"Contact Us"} />
+    </Layout>
+  )
+}
 
 export default ContactUs

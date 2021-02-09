@@ -3,13 +3,13 @@ import SEO from "@components/SEO"
 import Layout from "@components/Layout/"
 import AdditionalPage from "@components/AdditionalPage/"
 
-const Help = () => {
+const TermsAndConditions = () => {
   return (
     <Layout>
-      <SEO title="Help" />
-      <AdditionalPage title={"Help"} />
+      <SEO title="T & C" />
+      <AdditionalPage title={"Terms And Conditions"} />
     </Layout>
   )
 }
 
-export default Help
+export default TermsAndConditions

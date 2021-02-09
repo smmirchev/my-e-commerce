@@ -3,13 +3,13 @@ import SEO from "@components/SEO"
 import Layout from "@components/Layout/"
 import AdditionalPage from "@components/AdditionalPage/"
 
-const Help = () => {
+const Faq = () => {
   return (
     <Layout>
-      <SEO title="Help" />
-      <AdditionalPage title={"Help"} />
+      <SEO title="FAQ" />
+      <AdditionalPage title={"Freqently Asked Questions"} />
     </Layout>
   )
 }
 
-export default Help
+export default Faq

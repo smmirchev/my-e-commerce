@@ -1,5 +1,52 @@
 .login-register-wrapper {
-  background-color: pink;
-  max-width: 800px;
+  background-color: $color-dark-gray;
+  padding: 2rem;
+  max-width: 700px;
   margin: 0 auto;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  label {
+    margin-bottom: 0.3rem;
+    margin-left: 0.5rem;
+  }
+  input {
+    padding: 0.5rem;
+  }
+  span {
+    color: $color-text-error;
+    margin-top: 0.3rem;
+    margin-left: 0.5rem;
+    font-weight: 600;
+  }
+}
+
+.submit-button {
+  background: $color-primary;
+  color: $color-text-white;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  width: 300px;
+  padding: 1rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@include xs-down {
+  .submit-button {
+    width: 100%;
+  }
 }

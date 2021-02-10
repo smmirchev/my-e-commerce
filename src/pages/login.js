@@ -45,8 +45,7 @@ const Login = () => {
             initialValues={initialValues}
             onSubmit={handleSubmit}
             render={props => <LoginForm {...props} formKey />}
-            // validateOnBlur
-            // validateOnChange
+            validateOnChange={false}
           />
         </div>
       </Container>
@@ -81,7 +80,7 @@ const LoginForm = ({
           name="email"
           placeholder="Your email..."
         />
-        {errors?.email && touched?.email && errors?.email}
+        <span>{errors?.email && touched?.email && errors?.email}</span>
       </div>
 
       <div className={styles.formField}>
@@ -95,10 +94,14 @@ const LoginForm = ({
           name="password"
           placeholder="Yur password..."
         />
-        {errors?.password && touched?.password && errors?.password}
+        <span>{errors?.password && touched?.password && errors?.password}</span>
       </div>
 
-      <button type="submit" disabled={isSubmitting}>
+      <button
+        className={styles.submitButton}
+        type="submit"
+        disabled={isSubmitting}
+      >
         Submit
       </button>
     </form>

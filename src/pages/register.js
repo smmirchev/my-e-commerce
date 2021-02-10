@@ -50,8 +50,7 @@ const Register = () => {
             initialValues={initialValues}
             onSubmit={handleSubmit}
             render={props => <RegisterForm {...props} formKey />}
-            // validateOnBlur
-            // validateOnChange
+            validateOnChange={false}
           />
         </div>
       </Container>
@@ -86,7 +85,7 @@ const RegisterForm = ({
           name="username"
           placeholder="Type in your username"
         />
-        {errors?.username && touched?.username && errors?.username}
+        <span>{errors?.username && touched?.username && errors?.username}</span>
       </div>
 
       <div className={styles.formField}>
@@ -100,7 +99,7 @@ const RegisterForm = ({
           name="email"
           placeholder="Type in your email"
         />
-        {errors?.email && touched?.email && errors?.email}
+        <span>{errors?.email && touched?.email && errors?.email}</span>
       </div>
 
       <div className={styles.formField}>
@@ -114,7 +113,7 @@ const RegisterForm = ({
           name="password"
           placeholder="Type in your password"
         />
-        {errors?.password && touched?.password && errors?.password}
+        <span>{errors?.password && touched?.password && errors?.password}</span>
       </div>
 
       <div className={styles.formField}>
@@ -128,12 +127,18 @@ const RegisterForm = ({
           name="confirmPassword"
           placeholder="Cofirm your password"
         />
-        {errors?.confirmPassword &&
-          touched?.confirmPassword &&
-          errors?.confirmPassword}
+        <span>
+          {errors?.confirmPassword &&
+            touched?.confirmPassword &&
+            errors?.confirmPassword}
+        </span>
       </div>
 
-      <button type="submit" disabled={isSubmitting}>
+      <button
+        className={styles.submitButton}
+        type="submit"
+        disabled={isSubmitting}
+      >
         Submit
       </button>
     </form>

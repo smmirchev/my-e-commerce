@@ -1,0 +1,66 @@
+%button-primary {
+  background: $color-primary;
+  color: $color-text-white;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+%button-secondary {
+  background: white;
+  cursor: pointer;
+  padding: 1rem;
+  color: $color-primary;
+  border: 1px solid $color-primary;
+  outline: none;
+  &:hover {
+    background: $color-primary-light;
+  }
+}
+
+%button-increment-decrement {
+  width: 45px;
+  height: 100%;
+  border: 2px solid transparent;
+  font-size: 1.3rem;
+  outline: none;
+  &:hover {
+    border: 2px solid $color-primary;
+    color: $color-primary;
+    cursor: pointer;
+  }
+}
+
+%link-like-button-primary {
+  text-decoration: none;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  background: $color-primary;
+  color: $color-text-white;
+  margin-bottom: 1rem;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+%link-like-button-secondary {
+  text-decoration: none;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  background: white;
+  color: $color-primary;
+  border: 1px solid $color-primary;
+  &:hover {
+    background: $color-primary-light;
+  }
+}

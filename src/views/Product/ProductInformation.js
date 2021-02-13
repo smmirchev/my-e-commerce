@@ -16,7 +16,7 @@ const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
     try {
       const { data } = await axios.post(
         BASKET,
-        { productId: id, quantity: 1 },
+        { productId: id, quantity: 1, productPrice: price },
         {
           headers: {
             "x-auth-token": token,

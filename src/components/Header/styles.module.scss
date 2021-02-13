@@ -134,25 +134,11 @@
         top: 100%;
         flex-direction: column;
         a {
-          text-decoration: none;
-          width: 100%;
-          padding: 1rem;
-          text-align: center;
           &:first-child {
-            background: $color-primary;
-            color: $color-text-white;
-            margin-bottom: 1rem;
-            &:hover {
-              opacity: 0.8;
-            }
+            @extend %link-like-button-primary;
           }
           &:last-child {
-            background: white;
-            color: $color-primary;
-            border: 1px solid $color-primary;
-            &:hover {
-              background: $color-primary-light;
-            }
+            @extend %link-like-button-secondary;
           }
         }
         .greeting {
@@ -161,15 +147,7 @@
           margin-bottom: 1rem;
         }
         .logout-button {
-          background: white;
-          cursor: pointer;
-          padding: 1rem;
-          color: $color-primary;
-          border: 1px solid $color-primary;
-          outline: none;
-          &:hover {
-            background: $color-primary-light;
-          }
+          @extend %button-secondary;
         }
       }
 

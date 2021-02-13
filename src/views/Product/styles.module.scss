@@ -64,23 +64,14 @@
     input {
       width: 45px;
       height: 100%;
-      padding: 0.5rem;
+      padding: 0.8rem;
       &:focus {
         border: 2px solid $color-primary;
         outline: $color-primary;
       }
     }
     button {
-      width: 45px;
-      height: 100%;
-      border: none;
-      font-size: 1.3rem;
-      outline: none;
-      &:hover {
-        border: 2px solid $color-primary;
-        color: $color-primary;
-        cursor: pointer;
-      }
+      @extend %button-increment-decrement;
     }
     p {
       font-size: 1.2rem;
@@ -89,19 +80,7 @@
     }
   }
   .basket-button {
-    background: $color-primary;
-    color: $color-text-white;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    width: 100%;
-    padding: 1rem;
-    text-align: center;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    &:hover {
-      opacity: 0.8;
-    }
+    @extend %button-primary;
   }
 }
 

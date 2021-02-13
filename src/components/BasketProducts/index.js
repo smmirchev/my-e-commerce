@@ -36,6 +36,8 @@ const BasketProducts = () => {
     }
   `)
   const user = useSelector(state => state.user)
+  const dispatch = useDispatch()
+  const token = localStorage.getItem("e-commerce-token")
 
   const productsInBasket = products?.allMarkdownRemark?.edges?.filter(
     ({ node: { frontmatter: filteredProduct } }) => {
@@ -48,10 +50,54 @@ const BasketProducts = () => {
     }
   )
 
+  const getTotalProductsCount = () => {
+    return user?.basket?.reduce((total, { quantity }, index, array) => {
+      total += quantity
+      return total
+    }, 0)
+  }
+
+  const getTotalBasketPrice = () => {
+    const price = user?.basket?.reduce(
+      (total, { productPrice, quantity }, index, array) => {
+        total += productPrice * quantity
+        return total
+      },
+      0
+    )
+    return Math.ceil(price * 100) / 100
+  }
+
+  const handleCheckout = async () => {
+    try {
+      const { data } = await axios.delete(BASKET, {
+        headers: {
+          "x-auth-token": token,
+        },
+      })
+      dispatch(updateUser(data))
+      console.log("success")
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div className={styles.basketProductsWrapper}>
+      <div className={styles.basketProductsHeadingWrapper}>
+        <div className={styles.basketProductsHeadingContainer}>
+          <p>{`${getTotalProductsCount()} products:`}</p>
+          <p>{`£${getTotalBasketPrice()}`}</p>
+        </div>
+        {!!getTotalProductsCount() && (
+          <div className={styles.basketProductsHeadingContainer}>
+            <button onClick={() => handleCheckout()}>Checkout</button>
+          </div>
+        )}
+      </div>
+      <hr />
       {productsInBasket?.map(({ node: { frontmatter: product } }) => (
-        <Fragment>
+        <Fragment key={product?.id}>
           <BasketProduct
             name={product?.nameEn}
             image={product?.image}
@@ -84,7 +130,7 @@ const BasketProduct = ({ name, image, imageAlt, price, id }) => {
     try {
       const { data } = await axios.post(
         BASKET,
-        { productId: id, quantity: 1 },
+        { productId: id, quantity: 1, productPrice: price },
         {
           headers: {
             "x-auth-token": token,
@@ -98,7 +144,6 @@ const BasketProduct = ({ name, image, imageAlt, price, id }) => {
   }
 
   const removeFromBasket = async id => {
-    console.log(BASKET_PRODUCT(id))
     try {
       const { data } = await axios.put(
         BASKET_PRODUCT(id),
@@ -130,7 +175,7 @@ const BasketProduct = ({ name, image, imageAlt, price, id }) => {
       </div>
       <div>
         <p>{name}</p>
-        <p className={styles.productPrice}>{price}</p>
+        <p className={styles.productPrice}>{`£${price}`}</p>
         <div className={styles.quantityContainer}>
           <p>{`Quantity: ${getQuantity()}`}</p>
           <button onClick={() => addToBasket(id)}>

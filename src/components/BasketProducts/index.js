@@ -1,8 +1,7 @@
 import React, { Fragment } from "react"
 import axios from "axios"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useSelector } from "react-redux"
 import Img from "gatsby-image/withIEPolyfill"
 import { useStaticQuery, graphql } from "gatsby"
 import { BASKET, BASKET_PRODUCT } from "@functions/api"
@@ -24,7 +23,7 @@ const BasketProducts = () => {
               imageAlt
               image {
                 childImageSharp {
-                  fluid(maxWidth: 1000) {
+                  fluid(maxWidth: 700) {
                     ...GatsbyImageSharpFluid
                   }
                 }

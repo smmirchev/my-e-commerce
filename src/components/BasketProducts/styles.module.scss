@@ -4,9 +4,7 @@
   z-index: 4;
   margin-bottom: 1rem;
   hr {
-    margin: 1rem 0;
-    color: $color-border;
-    border-bottom: 1px solid $color-border;
+    @extend %custom-hr;
     &:last-child {
       display: none;
     }

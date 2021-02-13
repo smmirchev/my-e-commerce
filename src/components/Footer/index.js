@@ -16,6 +16,7 @@ const Footer = () => {
               This website is for demonstration of technical skills only. None
               of the products or information presented is real.
             </p>
+            <p>Site images are taken from: https://unsplash.com/</p>
           </div>
           <div className={styles.footerRight}>
             <div className={styles.footerRightContent}>

@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { useDispatch } from "react-redux"
+import React, { useState, useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Reviews from "@components/reviews"
@@ -10,13 +10,18 @@ import { updateUser } from "@store/user"
 
 const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
   const token = localStorage.getItem("e-commerce-token")
+  const user = useSelector(state => state.user)
   const dispatch = useDispatch()
+  const [queryQuantity, setQueryQuantity] = useState(1)
+  const regExp = new RegExp("^\\d+$")
 
   const addToBasket = async () => {
+    let quantity = 1
+    if (!!queryQuantity) quantity = parseInt(queryQuantity)
     try {
       const { data } = await axios.post(
         BASKET,
-        { productId: id, quantity: 1, productPrice: price },
+        { productId: id, quantity: quantity, productPrice: price },
         {
           headers: {
             "x-auth-token": token,
@@ -29,8 +34,16 @@ const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
     }
   }
 
+  useEffect(() => {
+    if (!!queryQuantity) {
+      if (!regExp?.test(queryQuantity)) setQueryQuantity(1)
+      if (queryQuantity > 99) setQueryQuantity(99)
+    }
+  }, [queryQuantity])
+
   return (
     <section className={styles.informationContainer}>
+      {console.log(queryQuantity)}
       <h1>{titleEn}</h1>
       <p className={styles.category}>Category: {upperCase(category)}</p>
       <Reviews reviewsNumber={reviews} />
@@ -39,16 +52,30 @@ const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
       <hr />
       <p className={styles.quantityText}>Quantity</p>
       <div className={styles.quantityInputContainer}>
-        <input id="quantity" type="text" value={" "} name="quantity" />
-        <p>1</p>
-        <button>
+        <input
+          id="quantity"
+          type="text"
+          value={queryQuantity}
+          name="quantity"
+          onChange={e => {
+            setQueryQuantity(e?.target?.value)
+          }}
+        />
+        <p>{!!queryQuantity ? queryQuantity : 1}</p>
+        <button onClick={() => setQueryQuantity(query => parseInt(query) + 1)}>
           <FontAwesomeIcon icon="plus" className={styles.fontAwesomeIcon} />
         </button>
       </div>
       <hr />
-      <button className={styles.basketButton} onClick={() => addToBasket()}>
-        Add to basket
-      </button>
+      {!!user?._id ? (
+        <button className={styles.basketButton} onClick={() => addToBasket()}>
+          Add to basket
+        </button>
+      ) : (
+        <button className={styles.basketButtonDisabled} disabled>
+          Add to basket
+        </button>
+      )}
     </section>
   )
 }

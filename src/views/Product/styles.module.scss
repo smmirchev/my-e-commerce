@@ -82,6 +82,9 @@
   .basket-button {
     @extend %button-primary;
   }
+  .basket-button-disabled {
+    @extend %button-primary-disabled;
+  }
 }
 
 @include sm-down {

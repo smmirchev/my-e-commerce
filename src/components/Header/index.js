@@ -28,7 +28,7 @@ const Header = () => {
               imageAlt
               image {
                 childImageSharp {
-                  fluid(maxWidth: 500) {
+                  fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
                   }
                 }

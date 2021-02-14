@@ -22,7 +22,7 @@ const Products = ({ currentCategory, repeat = false }) => {
               imageAlt
               image {
                 childImageSharp {
-                  fluid(maxWidth: 1000) {
+                  fluid(maxWidth: 1100) {
                     ...GatsbyImageSharpFluid
                   }
                 }

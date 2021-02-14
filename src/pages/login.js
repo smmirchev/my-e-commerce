@@ -1,5 +1,8 @@
 import { navigate } from "gatsby-plugin-intl"
 import jwtDecode from "jwt-decode"
+import Noty from "noty"
+import "@nodeModules/noty/lib/noty.css"
+import "@nodeModules/noty/lib/themes/sunset.css"
 import { useDispatch } from "react-redux"
 import axios from "axios"
 import { Formik } from "formik"
@@ -30,7 +33,13 @@ const Login = () => {
 
       navigate("/")
     } catch (error) {
-      console.log(error)
+      new Noty({
+        text: error?.response?.data,
+        type: "error",
+        layout: "topLeft",
+        theme: "sunset",
+        timeout: "3000",
+      }).show()
     }
   }
 

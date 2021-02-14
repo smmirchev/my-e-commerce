@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import Noty from "noty"
+import "@nodeModules/noty/lib/noty.css"
+import "@nodeModules/noty/lib/themes/sunset.css"
 import axios from "axios"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Reviews from "@components/reviews"
@@ -29,6 +32,13 @@ const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
         }
       )
       dispatch(updateUser(data))
+      new Noty({
+        text: "Product successfully added",
+        type: "success",
+        layout: "topLeft",
+        theme: "sunset",
+        timeout: "3000",
+      }).show()
     } catch (error) {
       console.log(error)
     }
@@ -43,7 +53,6 @@ const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
 
   return (
     <section className={styles.informationContainer}>
-      {console.log(queryQuantity)}
       <h1>{titleEn}</h1>
       <p className={styles.category}>Category: {upperCase(category)}</p>
       <Reviews reviewsNumber={reviews} />

@@ -1,5 +1,8 @@
 import React, { Fragment } from "react"
 import axios from "axios"
+import Noty from "noty"
+import "@nodeModules/noty/lib/noty.css"
+import "@nodeModules/noty/lib/themes/sunset.css"
 import { useDispatch, useSelector } from "react-redux"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Img from "gatsby-image/withIEPolyfill"
@@ -23,7 +26,7 @@ const BasketProducts = () => {
               imageAlt
               image {
                 childImageSharp {
-                  fluid(maxWidth: 700) {
+                  fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -75,7 +78,13 @@ const BasketProducts = () => {
         },
       })
       dispatch(updateUser(data))
-      console.log("success")
+      new Noty({
+        text: "Checkout successful",
+        type: "success",
+        layout: "topLeft",
+        theme: "sunset",
+        timeout: "3000",
+      }).show()
     } catch (error) {
       console.log(error)
     }

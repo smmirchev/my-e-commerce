@@ -18,7 +18,7 @@ const Categories = () => {
               imageAlt
               image {
                 childImageSharp {
-                  fluid(maxWidth: 300) {
+                  fluid(maxWidth: 600) {
                     ...GatsbyImageSharpFluid
                   }
                 }

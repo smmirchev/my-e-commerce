@@ -42,11 +42,13 @@
       &:last-child {
         margin-right: 0;
       }
+      h3 {
+        height: 100%;
+      }
       a {
         text-decoration: none;
         color: $color-text-black;
         width: 100%;
-        height: 100%;
         &:hover {
           color: $color-text-black-hover;
           :global(.gatsby-image-wrapper) {
@@ -78,15 +80,18 @@
   @include md-down {
     .categories-list {
       .category-list-item {
-        flex: 0 0 calc(33.33333% - 4rem);
+        margin-left: 1rem;
+        margin-right: 1rem;
+        flex: 0 0 calc(33.33333% - 2rem);
       }
     }
   }
   @include xs-down {
     .categories-list {
       .category-list-item {
-        margin: 0 1rem;
-        flex: 0 0 calc(50% - 2rem);
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        flex: 0 0 calc(50% - 1rem);
       }
     }
   }

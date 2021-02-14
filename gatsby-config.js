@@ -33,6 +33,7 @@ module.exports = {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
+          "@nodeModules": path.resolve(__dirname, "node_modules"),
           "@components": path.resolve(__dirname, "src/components"),
           "@functions": path.resolve(__dirname, "src/functions"),
           "@styles": path.resolve(__dirname, "src/styles"),
@@ -47,7 +48,10 @@ module.exports = {
       options: {
         data: `@import './src/styles/styles.scss';`,
       },
-      includePaths: ["./src/styles"],
+      includePaths: [
+        `${__dirname}/src/styles`,
+        `${__dirname}/src/node_modules`,
+      ],
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

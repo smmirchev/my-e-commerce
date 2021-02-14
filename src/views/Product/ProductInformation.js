@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import Noty from "noty"
-import "@nodeModules/noty/lib/noty.css"
-import "@nodeModules/noty/lib/themes/sunset.css"
 import axios from "axios"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Reviews from "@components/reviews"

@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import { Modal } from "react-responsive-modal"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby-plugin-intl"
 import { useIntl } from "gatsby-plugin-intl"
@@ -46,16 +47,45 @@ const Header = () => {
   const [showSearchOverlay, setShowSearchOverlay] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   const $searcInput = useRef(null)
+  const [openModal, setOpenModal] = useState(false)
+  const [basketModal, setBasketModal] = useState(false)
+  const [searchModal, setSearchModal] = useState(false)
 
   const $searchBox = useDetectIfClickedOutside(() =>
     setShowSearchOverlay(false)
   )
+
+  const handleOpenModal = () => {
+    setOpenModal(true)
+    setBasketModal(false)
+  }
+  const handleCloseModal = () => {
+    setOpenModal(false)
+    setBasketModal(false)
+    setSearchModal(false)
+  }
 
   const queryProducts = () =>
     products?.allMarkdownRemark?.edges?.filter(
       ({ node: { frontmatter: product } }) =>
         product?.nameEn.toLowerCase().includes(searchQuery.toLocaleLowerCase())
     )
+
+  const DisplayFoundProducts = () =>
+    queryProducts()?.map(({ node: { frontmatter: product } }) => (
+      <Fragment key={product?.id}>
+        <hr />
+        <Link to={`/${product?.categoryId}/${product?.id}`}>
+          <FoundProduct
+            name={product?.nameEn}
+            category={product?.categoryId}
+            price={product?.price}
+            image={product?.image}
+            imageAlt={product?.imageAlt}
+          />
+        </Link>
+      </Fragment>
+    ))
 
   return (
     <header className={styles.headerWrapper}>
@@ -100,7 +130,6 @@ const Header = () => {
                   value={searchQuery}
                   onChange={e => setSearchQuery(e?.target?.value)}
                   onFocus={() => setShowSearchOverlay(true)}
-                  // onBlur={() => setShowSearchOverlay(false)}
                 />
                 <button onClick={() => $searcInput?.current?.focus()}>
                   <FontAwesomeIcon
@@ -113,25 +142,25 @@ const Header = () => {
                 <div className={styles.searchDropdown}>
                   <h3>Products found:</h3>
                   {!queryProducts().length && <p>No products found.</p>}
-                  {queryProducts()?.map(
-                    ({ node: { frontmatter: product } }) => (
-                      <Fragment key={product?.id}>
-                        <hr />
-                        <Link to={`/${product?.categoryId}/${product?.id}`}>
-                          <FoundProduct
-                            name={product?.nameEn}
-                            category={product?.categoryId}
-                            price={product?.price}
-                            image={product?.image}
-                            imageAlt={product?.imageAlt}
-                          />
-                        </Link>
-                      </Fragment>
-                    )
-                  )}
+                  <DisplayFoundProducts />
                 </div>
               )}
             </div>
+
+            <div className={styles.bottomMiddleMobile}>
+              <button
+                onClick={() => {
+                  setSearchModal(true)
+                  handleOpenModal()
+                }}
+              >
+                <FontAwesomeIcon
+                  icon="search"
+                  className={styles.fontAwesomeIcon}
+                />
+              </button>
+            </div>
+
             <div className={styles.bottomRightDesktop}>
               <div
                 className={`${styles.desktopDropdown} ${
@@ -179,21 +208,127 @@ const Header = () => {
                   {!!user ? (
                     <BasketProducts />
                   ) : (
-                    <p>Login to view your basket</p>
+                    <p>
+                      <Link to="/login">Login</Link> to view your basket
+                    </p>
                   )}
                 </div>
               </div>
             </div>
             <div className={styles.bottomRightMobile}>
-              <FontAwesomeIcon
-                icon="bars"
-                size="30px"
-                className={styles.fontAwesomeIcon}
-              />
+              <button
+                className={styles.mobileMenuButton}
+                onClick={handleOpenModal}
+              >
+                <FontAwesomeIcon
+                  icon="bars"
+                  className={styles.fontAwesomeIcon}
+                />
+              </button>
             </div>
           </div>
         </Container>
       </div>
+      <Modal open={openModal} onClose={handleCloseModal} center>
+        {searchModal && (
+          <div className={styles.mobileSearch}>
+            <div className={styles.searchBox}>
+              <input
+                ref={$searcInput}
+                placeholder="Products..."
+                type="search"
+                value={searchQuery}
+                onChange={e => setSearchQuery(e?.target?.value)}
+              />
+              <button onClick={() => $searcInput?.current?.focus()}>
+                <FontAwesomeIcon
+                  icon="search"
+                  className={styles.fontAwesomeIcon}
+                />
+              </button>
+            </div>
+            {!!searchQuery && (
+              <div className={styles.mobileSearchDropdown}>
+                <h3>Products found:</h3>
+                {!queryProducts().length && <p>No products found.</p>}
+                <DisplayFoundProducts />
+              </div>
+            )}
+          </div>
+        )}
+        {basketModal && (
+          <div className={styles.mobileBasket}>
+            {!!user ? (
+              <BasketProducts />
+            ) : (
+              <p>
+                <Link to="/login">Login</Link> to view your basket
+              </p>
+            )}
+          </div>
+        )}
+        {!basketModal && !searchModal && (
+          <nav className={styles.mobileMenu}>
+            <ul>
+              {!!user?._id ? (
+                <Fragment>
+                  <li>
+                    <p
+                      className={styles.greeting}
+                    >{`Hello ${user?.username}`}</p>
+                  </li>
+                  <li>
+                    <button
+                      className={styles.mobilePrimaryButton}
+                      onClick={() => setBasketModal(true)}
+                    >
+                      Basket
+                    </button>
+                  </li>
+                </Fragment>
+              ) : (
+                <Fragment>
+                  <li>
+                    <Link
+                      className={styles.mobilePrimaryLinkButton}
+                      to="/login"
+                    >
+                      Login
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className={styles.mobileSecondaryLinkButton}
+                      to="/register"
+                    >
+                      Register
+                    </Link>
+                  </li>
+                </Fragment>
+              )}
+              <li>
+                <Link to="/contact-us">Contact us</Link>
+              </li>
+              <li>
+                <Link to="/help">Help</Link>
+              </li>
+              {!!user?._id && (
+                <li>
+                  <button
+                    className={styles.mobileSecondaryButton}
+                    onClick={() => {
+                      localStorage.removeItem("e-commerce-token")
+                      navigate("/")
+                    }}
+                  >
+                    Log out
+                  </button>
+                </li>
+              )}
+            </ul>
+          </nav>
+        )}
+      </Modal>
     </header>
   )
 }

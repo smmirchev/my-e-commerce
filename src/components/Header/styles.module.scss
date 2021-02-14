@@ -7,6 +7,18 @@
       padding: 0.5rem 2rem;
     }
   }
+
+  :global(.react-responsive-modal-modal) {
+    background-color: $color-dark-gray;
+    .react-responsive-modal-closeButton {
+      svg {
+        color: $color-text-black;
+        &:hover {
+          color: $color-text-black-hover;
+        }
+      }
+    }
+  }
   @include md-down {
     > div {
       padding: 0 1rem;
@@ -89,74 +101,24 @@
   .bottom-middle {
     position: relative;
     z-index: 3;
-    .search-box {
-      border: 1px solid black;
-      display: flex;
-      background: $color-text-white;
-    }
-    input {
-      border: none;
-      outline: none;
-      background: $color-text-white;
-      padding: 0.5rem;
-    }
-    button {
-      border: 0;
-      background: $color-text-white;
-      outline: none;
-      cursor: pointer;
-    }
-    .font-awesome-icon {
-      color: $color-primary;
-    }
     .search-dropdown {
-      display: flex;
-      color: $color-text-black;
-      opacity: 1;
+      @extend %search-dropdown;
       position: absolute;
-      background: #f2f2f2;
       padding: 1rem;
       width: 400px;
       right: 0;
       top: 100%;
-      flex-direction: column;
       max-height: 500px;
-      overflow-y: auto;
-      hr {
-        @extend %custom-hr;
-      }
-      a {
-        text-decoration: none;
-        color: $color-text-black;
-        cursor: pointer;
-        &:hover {
-          opacity: 0.8;
-        }
-      }
-      .found-product-container {
-        display: flex;
-        p {
-          margin: 0;
-          margin-bottom: 0.5rem;
-          font-size: 1.1rem;
-          &:nth-child(2) {
-            color: $color-text-gray;
-          }
-          &:last-child {
-            font-weight: 600;
-            font-size: 1.3rem;
-          }
-        }
-        :global(.gatsby-image-wrapper) {
-          width: 70px;
-          height: 70px;
-        }
-        > div {
-          &:last-child {
-            margin-left: 1rem;
-          }
-        }
-      }
+    }
+  }
+
+  .bottom-middle-mobile {
+    display: none;
+    button {
+      background: none;
+      outline: none;
+      border: none;
+      cursor: pointer;
     }
   }
 
@@ -190,7 +152,7 @@
         flex-direction: column;
         max-height: 500px;
         overflow-y: auto;
-        a {
+        > a {
           &:first-child {
             @extend %link-like-button-primary;
           }
@@ -198,10 +160,13 @@
             @extend %link-like-button-secondary;
           }
         }
-        .greeting {
-          text-align: left;
-          font-weight: 600;
-          margin-bottom: 1rem;
+        > p {
+          > a {
+            color: $color-text-black;
+            &:hover {
+              color: $color-text-black-hover;
+            }
+          }
         }
         .logout-button {
           @extend %button-secondary;
@@ -220,8 +185,20 @@
       }
     }
   }
+
   .bottom-right-mobile {
     display: none;
+    .mobile-menu-button {
+      background: none;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        .font-awesome-icon {
+          color: $color-text-white-hover;
+        }
+      }
+    }
   }
 
   @include md-down {
@@ -240,20 +217,127 @@
     }
     .bottom-middle {
       margin-right: 1rem;
-      .search-box {
-        background: none;
-        border: none;
-      }
+      display: none;
       button {
         background: none;
-      }
-      input {
-        display: none;
       }
       .font-awesome-icon {
         color: $color-text-white;
       }
     }
+    .bottom-middle-mobile {
+      display: flex;
+    }
+  }
+}
+
+.mobile-search {
+  min-width: 300px;
+  min-height: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  .mobile-search-dropdown {
+    @extend %search-dropdown;
+    width: 300px;
+    margin-top: 2rem;
+  }
+}
+
+.mobile-basket {
+  min-width: 300px;
+  min-height: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+  margin-top: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  > p {
+    margin: auto;
+    font-size: 1.3rem;
+    a {
+      color: $color-text-black;
+      &:hover {
+        color: $color-text-black-hover;
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  margin-top: 2rem;
+  min-width: 330px;
+  min-height: 300px;
+  padding: 2rem;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: flex;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        text-decoration: none;
+        color: $color-text-black;
+        &:hover {
+          color: $color-text-black-hover;
+        }
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+  .mobile-primary-link-button {
+    @extend %link-like-button-primary;
+    margin: 0;
+  }
+
+  .mobile-secondary-link-button {
+    @extend %link-like-button-secondary;
+    margin: 0;
+  }
+  .mobile-primary-button {
+    @extend %button-primary;
+    margin: 0;
+  }
+  .mobile-secondary-button {
+    @extend %button-secondary;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.search-box {
+  border: 1px solid black;
+  display: flex;
+  background: $color-text-white;
+  max-height: 45px;
+
+  input {
+    border: none;
+    outline: none;
+    background: $color-text-white;
+    padding: 0.5rem;
+    width: 100%;
+  }
+  button {
+    border: 0;
+    background: $color-text-white;
+    outline: none;
+    cursor: pointer;
+  }
+  .font-awesome-icon {
+    color: $color-primary;
   }
 }
 
@@ -262,4 +346,54 @@
   font-size: 2.5rem;
   margin: 0;
   padding: 0.4rem;
+}
+
+.greeting {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+%search-dropdown {
+  display: flex;
+  color: $color-text-black;
+  opacity: 1;
+  background: #f2f2f2;
+  flex-direction: column;
+  overflow-y: auto;
+  hr {
+    @extend %custom-hr;
+  }
+  a {
+    text-decoration: none;
+    color: $color-text-black;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .found-product-container {
+    display: flex;
+    p {
+      margin: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      &:nth-child(2) {
+        color: $color-text-gray;
+      }
+      &:last-child {
+        font-weight: 600;
+        font-size: 1.3rem;
+      }
+    }
+    :global(.gatsby-image-wrapper) {
+      width: 70px;
+      height: 70px;
+    }
+    > div {
+      &:last-child {
+        margin-left: 1rem;
+      }
+    }
+  }
 }

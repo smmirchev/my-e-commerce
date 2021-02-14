@@ -1,6 +1,7 @@
 .basket-products-wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
   z-index: 4;
   margin-bottom: 1rem;
   hr {
@@ -10,10 +11,12 @@
     }
   }
   .basket-products-heading-wrapper {
+    width: 100%;
     .basket-products-heading-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 100%;
       p {
         &:last-child {
           font-weight: 600;

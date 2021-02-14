@@ -1,8 +1,6 @@
 import { navigate } from "gatsby-plugin-intl"
 import jwtDecode from "jwt-decode"
 import Noty from "noty"
-import "@nodeModules/noty/lib/noty.css"
-import "@nodeModules/noty/lib/themes/sunset.css"
 import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
 import { Formik } from "formik"

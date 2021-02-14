@@ -1,13 +1,11 @@
 import { navigate } from "gatsby-plugin-intl"
 import jwtDecode from "jwt-decode"
 import Noty from "noty"
-import "@nodeModules/noty/lib/noty.css"
-import "@nodeModules/noty/lib/themes/sunset.css"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
 import { Formik } from "formik"
 import * as Yup from "yup"
-import React from "react"
+import React, { useEffect } from "react"
 import SEO from "@components/SEO"
 import Layout from "@components/Layout/"
 import Container from "@components/Container/"
@@ -17,6 +15,7 @@ import { loginUser } from "@store/user"
 
 const Login = () => {
   const dispatch = useDispatch()
+  const user = useSelector(state => state.user)
 
   const initialValues = {
     email: "",
@@ -42,6 +41,10 @@ const Login = () => {
       }).show()
     }
   }
+
+  useEffect(() => {
+    if (!!user?._id) navigate("/")
+  }, [])
 
   return (
     <Layout>

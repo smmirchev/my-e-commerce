@@ -1,8 +1,6 @@
 import React, { Fragment } from "react"
 import axios from "axios"
 import Noty from "noty"
-import "@nodeModules/noty/lib/noty.css"
-import "@nodeModules/noty/lib/themes/sunset.css"
 import { useDispatch, useSelector } from "react-redux"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Img from "gatsby-image/withIEPolyfill"

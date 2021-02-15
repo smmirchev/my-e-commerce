@@ -20,7 +20,7 @@ const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
     let quantity = 1
     if (!!queryQuantity) quantity = parseInt(queryQuantity)
     try {
-      const { data } = await axios.post(
+      const { headers } = await axios.post(
         BASKET,
         { productId: id, quantity: quantity, productPrice: price },
         {
@@ -29,7 +29,7 @@ const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
           },
         }
       )
-      dispatch(updateUser(data))
+      dispatch(updateUser(headers["x-auth-token"]))
       new Noty({
         text: "Product successfully added",
         type: "success",

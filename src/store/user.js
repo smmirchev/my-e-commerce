@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
+import jwtDecode from "jwt-decode"
 import store from "./configureStore"
 
 const userSlice = createSlice({
@@ -10,7 +11,9 @@ const userSlice = createSlice({
       return payload
     },
     update: (state, action) => {
-      return action.payload
+      localStorage.setItem("e-commerce-token", action?.payload)
+      const user = jwtDecode(action?.payload)
+      return user
     },
   },
 })

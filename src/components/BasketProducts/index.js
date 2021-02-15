@@ -70,12 +70,13 @@ const BasketProducts = () => {
 
   const handleCheckout = async () => {
     try {
-      const { data } = await axios.delete(BASKET, {
+      const { headers } = await axios.delete(BASKET, {
         headers: {
           "x-auth-token": token,
         },
       })
-      dispatch(updateUser(data))
+      dispatch(updateUser(headers["x-auth-token"]))
+
       new Noty({
         text: "Checkout successful",
         type: "success",
@@ -134,7 +135,7 @@ const BasketProduct = ({ name, image, imageAlt, price, id }) => {
 
   const addToBasket = async id => {
     try {
-      const { data } = await axios.post(
+      const { headers } = await axios.post(
         BASKET,
         { productId: id, quantity: 1, productPrice: price },
         {
@@ -143,7 +144,7 @@ const BasketProduct = ({ name, image, imageAlt, price, id }) => {
           },
         }
       )
-      dispatch(updateUser(data))
+      dispatch(updateUser(headers["x-auth-token"]))
     } catch (error) {
       console.log(error)
     }
@@ -151,7 +152,7 @@ const BasketProduct = ({ name, image, imageAlt, price, id }) => {
 
   const removeFromBasket = async id => {
     try {
-      const { data } = await axios.put(
+      const { headers } = await axios.put(
         BASKET_PRODUCT(id),
         {},
         {
@@ -160,7 +161,7 @@ const BasketProduct = ({ name, image, imageAlt, price, id }) => {
           },
         }
       )
-      dispatch(updateUser(data))
+      dispatch(updateUser(headers["x-auth-token"]))
     } catch (error) {
       console.log(error)
     }

@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
+import jwtDecode from "jwt-decode"
+import { useDispatch } from "react-redux"
 import PropTypes from "prop-types"
 import Header from "@components/Header"
 import Footer from "@components/Footer"
 import styles from "./styles.module.scss"
+import { updateUser } from "@store/user"
 
 // Third party libraries - styling
 import "@nodeModules/noty/lib/noty.css"
@@ -24,6 +27,15 @@ import {
 library.add(faSearch, faBars, faStar, faPlus, faMinus, faTimes)
 
 const Layout = ({ children }) => {
+  const dispatch = useDispatch()
+  const token = localStorage.getItem("e-commerce-token")
+
+  useState(() => {
+    if (!!token) {
+      dispatch(updateUser(token))
+    }
+  }, [])
+
   return (
     <div className={styles.app}>
       <Header />

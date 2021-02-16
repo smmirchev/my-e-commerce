@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useIntl } from "gatsby-plugin-intl"
 import { useDispatch, useSelector } from "react-redux"
 import Noty from "noty"
 import axios from "axios"
@@ -10,6 +11,7 @@ import { BASKET } from "@functions/api"
 import { updateUser } from "@store/user"
 
 const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
+  const intl = useIntl()
   const token = localStorage.getItem("e-commerce-token")
   const user = useSelector(state => state.user)
   const dispatch = useDispatch()
@@ -31,7 +33,9 @@ const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
       )
       dispatch(updateUser(headers["x-auth-token"]))
       new Noty({
-        text: "Product successfully added",
+        text: intl.formatMessage({
+          id: "page.productTemplate.noty",
+        }),
         type: "success",
         layout: "topLeft",
         theme: "sunset",
@@ -52,12 +56,18 @@ const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
   return (
     <section className={styles.informationContainer}>
       <h1>{titleEn}</h1>
-      <p className={styles.category}>Category: {upperCase(category)}</p>
+      <p className={styles.category}>{`${intl.formatMessage({
+        id: "page.productTemplate.category",
+      })} ${upperCase(category)}`}</p>
       <Reviews reviewsNumber={reviews} />
       <hr />
       <p className={styles.price}>£{price}</p>
       <hr />
-      <p className={styles.quantityText}>Quantity</p>
+      <p className={styles.quantityText}>
+        {intl.formatMessage({
+          id: "page.productTemplate.quantity",
+        })}
+      </p>
       <div className={styles.quantityInputContainer}>
         <input
           id="quantity"
@@ -76,11 +86,15 @@ const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
       <hr />
       {!!user?._id ? (
         <button className={styles.basketButton} onClick={() => addToBasket()}>
-          Add to basket
+          {intl.formatMessage({
+            id: "page.productTemplate.button",
+          })}
         </button>
       ) : (
         <button className={styles.basketButtonDisabled} disabled>
-          Add to basket
+          {intl.formatMessage({
+            id: "page.productTemplate.button",
+          })}
         </button>
       )}
     </section>

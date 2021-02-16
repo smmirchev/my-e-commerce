@@ -100,7 +100,7 @@ const Header = () => {
             <div className={styles.topNavigation}>
               <Language />
               <Link to="/contact-us" className={styles.desktopNavigationLink}>
-                Contact Us
+                {intl.formatMessage({ id: "header.topNavigation.contact" })}
               </Link>
               <Link to="/help" className={styles.desktopNavigationLink}>
                 {intl.formatMessage({ id: "header.topNavigation.help" })}
@@ -127,7 +127,9 @@ const Header = () => {
               <div className={styles.searchBox}>
                 <input
                   ref={$searcInput}
-                  placeholder="Products..."
+                  placeholder={intl.formatMessage({
+                    id: "header.searchPlaceholder",
+                  })}
                   type="search"
                   value={searchQuery}
                   onChange={e => setSearchQuery(e?.target?.value)}
@@ -142,7 +144,11 @@ const Header = () => {
               </div>
               {!!searchQuery && showSearchOverlay && (
                 <div className={styles.searchDropdown}>
-                  <h3>Products found:</h3>
+                  <h3>
+                    {intl.formatMessage({
+                      id: "header.bottomNavigation.productsFound",
+                    })}
+                  </h3>
                   {!queryProducts().length && <p>No products found.</p>}
                   <DisplayFoundProducts />
                 </div>
@@ -173,12 +179,16 @@ const Header = () => {
                 onMouseEnter={() => setShowAccountOverlay(true)}
                 onMouseLeave={() => setShowAccountOverlay(false)}
               >
-                <p>Account</p>
+                <p>
+                  {intl.formatMessage({
+                    id: "header.bottomNavigation.account.name",
+                  })}
+                </p>
                 {!!user ? (
                   <div>
-                    <p
-                      className={styles.greeting}
-                    >{`Hello ${user?.username}`}</p>
+                    <p className={styles.greeting}>{`${intl.formatMessage({
+                      id: "header.bottomNavigation.account.loginGreeting",
+                    })} ${user?.username}`}</p>
                     <button
                       className={styles.logoutButton}
                       onClick={() => {
@@ -186,13 +196,24 @@ const Header = () => {
                         navigate("/")
                       }}
                     >
-                      Log out
+                      {intl.formatMessage({
+                        id: "header.bottomNavigation.account.logoutButton",
+                      })}
                     </button>
                   </div>
                 ) : (
                   <div>
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
+                    <Link to="/login">
+                      {intl.formatMessage({
+                        id: "header.bottomNavigation.account.logoutTopButton",
+                      })}
+                    </Link>
+                    <Link to="/register">
+                      {intl.formatMessage({
+                        id:
+                          "header.bottomNavigation.account.logoutBottomButton",
+                      })}
+                    </Link>
                   </div>
                 )}
               </div>
@@ -205,13 +226,24 @@ const Header = () => {
                 onMouseEnter={() => setShowBasketOverlay(true)}
                 onMouseLeave={() => setShowBasketOverlay(false)}
               >
-                <p>Basket</p>
+                <p>
+                  {intl.formatMessage({
+                    id: "header.bottomNavigation.basket.name",
+                  })}
+                </p>
                 <div>
                   {!!user ? (
                     <BasketProducts />
                   ) : (
                     <p>
-                      <Link to="/login">Login</Link> to view your basket
+                      <Link to="/login">
+                        {intl.formatMessage({
+                          id: "header.bottomNavigation.basket.logoutLink",
+                        })}
+                      </Link>{" "}
+                      {intl.formatMessage({
+                        id: "header.bottomNavigation.basket.logoutMessage",
+                      })}
                     </p>
                   )}
                 </div>
@@ -237,7 +269,9 @@ const Header = () => {
             <div className={styles.searchBox}>
               <input
                 ref={$searcInput}
-                placeholder="Products..."
+                placeholder={intl.formatMessage({
+                  id: "header.bottomNavigation.searchPlaceholder",
+                })}
                 type="search"
                 value={searchQuery}
                 onChange={e => setSearchQuery(e?.target?.value)}
@@ -251,8 +285,18 @@ const Header = () => {
             </div>
             {!!searchQuery && (
               <div className={styles.mobileSearchDropdown}>
-                <h3>Products found:</h3>
-                {!queryProducts().length && <p>No products found.</p>}
+                <h3>
+                  {intl.formatMessage({
+                    id: "header.bottomNavigation.productsFound",
+                  })}
+                </h3>
+                {!queryProducts().length && (
+                  <p>
+                    {intl.formatMessage({
+                      id: "header.bottomNavigation.productsFound",
+                    })}
+                  </p>
+                )}
                 <DisplayFoundProducts />
               </div>
             )}
@@ -275,16 +319,18 @@ const Header = () => {
               {!!user?._id ? (
                 <Fragment>
                   <li>
-                    <p
-                      className={styles.greeting}
-                    >{`Hello ${user?.username}`}</p>
+                    <p className={styles.greeting}>{`${intl.formatMessage({
+                      id: "header.bottomNavigation.account.loginGreeting",
+                    })} ${user?.username}`}</p>
                   </li>
                   <li>
                     <button
                       className={styles.mobilePrimaryButton}
                       onClick={() => setBasketModal(true)}
                     >
-                      Basket
+                      {intl.formatMessage({
+                        id: "header.bottomNavigation.basket.name",
+                      })}
                     </button>
                   </li>
                 </Fragment>
@@ -295,7 +341,9 @@ const Header = () => {
                       className={styles.mobilePrimaryLinkButton}
                       to="/login"
                     >
-                      Login
+                      {intl.formatMessage({
+                        id: "header.bottomNavigation.account.logoutTopButton",
+                      })}
                     </Link>
                   </li>
                   <li>
@@ -303,16 +351,25 @@ const Header = () => {
                       className={styles.mobileSecondaryLinkButton}
                       to="/register"
                     >
-                      Register
+                      {intl.formatMessage({
+                        id:
+                          "header.bottomNavigation.account.logoutBottomButton",
+                      })}
                     </Link>
                   </li>
                 </Fragment>
               )}
               <li>
-                <Link to="/contact-us">Contact us</Link>
+                <Link to="/contact-us">
+                  {intl.formatMessage({ id: "header.topNavigation.contact" })}
+                </Link>
               </li>
               <li>
-                <Link to="/help">Help</Link>
+                <Link to="/help">
+                  {intl.formatMessage({
+                    id: "header.topNavigation.help",
+                  })}
+                </Link>
               </li>
               {!!user?._id && (
                 <li>
@@ -323,7 +380,9 @@ const Header = () => {
                       navigate("/")
                     }}
                   >
-                    Log out
+                    {intl.formatMessage({
+                      id: "header.bottomNavigation.account.logoutButton",
+                    })}
                   </button>
                 </li>
               )}

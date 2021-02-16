@@ -30,10 +30,11 @@
         "logoutTopButton": "Anmeldung",
         "logoutBottomButton": "Registrieren",
         "loginGreeting": "Hallo",
-        "lognButton": "Ausloggen"
+        "logoutButton": "Ausloggen"
       },
       "searchPlaceholder": "Produkte...",
-      "productsFound": "Gefundene Produkte:"
+      "productsFound": "Gefundene Produkte:",
+      "noProductsFound": "Keine Produkte gefunden."
     }
   },
   "footer": {
@@ -85,7 +86,8 @@
       "category": "Kategorie:",
       "productOverview": "Produktübersicht",
       "button": "Zum Warenkorb hinzufügen",
-      "quantity": "Menge"
+      "quantity": "Menge",
+      "noty": "Produkt erfolgreich hinzugefügt"
     }
   },
   "components": {

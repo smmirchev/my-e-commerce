@@ -30,10 +30,11 @@
         "logoutTopButton": "Connexion",
         "logoutBottomButton": "S'inscrire",
         "loginGreeting": "Bonjour",
-        "lognButton": "Se déconnecter"
+        "logoutButton": "Se déconnecter"
       },
       "searchPlaceholder": "Des produits...",
-      "productsFound": "Produits trouvés:"
+      "productsFound": "Produits trouvés:",
+      "noProductsFound": "Aucun produit trouvé."
     }
   },
   "footer": {
@@ -71,7 +72,7 @@
     },
     "termsAndConditions": {
       "title": "Termes et Conditions",
-      "h1": "T & C"
+      "h1": "Termes et Conditions"
     },
     "privacyPolicy": {
       "title": "Politique de confidentialité",
@@ -85,7 +86,8 @@
       "category": "Catégorie:",
       "productOverview": "Présentation du produit",
       "button": "Ajouter au panier",
-      "quantity": "Quantité"
+      "quantity": "Quantité",
+      "noty": "Produit ajouté avec succès"
     }
   },
   "components": {

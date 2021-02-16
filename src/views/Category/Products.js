@@ -65,6 +65,7 @@ const Products = ({ currentCategory, repeat = false }) => {
 
   return (
     <div className={styles.productsWrapper}>
+      <h1 className={styles.templateHeading}>Products</h1>
       <ul className={styles.productList}>
         <ProductItem />
         {repeat && <ProductItem />}

@@ -36,7 +36,11 @@ const Categories = () => {
 
   return (
     <section className={styles.categoriesWrapper}>
-      <h1>Main Categories</h1>
+      <h1>
+        {intl.formatMessage({
+          id: "page.home.h1",
+        })}
+      </h1>
       <ul className={styles.categoriesList}>
         {categories?.allMarkdownRemark?.edges?.map(
           ({ node: { frontmatter: category } }) => (

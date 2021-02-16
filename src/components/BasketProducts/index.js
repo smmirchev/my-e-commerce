@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { useIntl } from "gatsby-plugin-intl"
 import axios from "axios"
 import Noty from "noty"
 import { useDispatch, useSelector } from "react-redux"
@@ -35,6 +36,7 @@ const BasketProducts = () => {
       }
     }
   `)
+  const intl = useIntl()
   const user = useSelector(state => state.user)
   const dispatch = useDispatch()
   const token = localStorage.getItem("e-commerce-token")
@@ -78,7 +80,9 @@ const BasketProducts = () => {
       dispatch(updateUser(headers["x-auth-token"]))
 
       new Noty({
-        text: "Checkout successful",
+        text: intl.formatMessage({
+          id: "components.basketProducts.noty",
+        }),
         type: "success",
         layout: "topLeft",
         theme: "sunset",
@@ -99,12 +103,18 @@ const BasketProducts = () => {
     <div className={styles.basketProductsWrapper}>
       <div className={styles.basketProductsHeadingWrapper}>
         <div className={styles.basketProductsHeadingContainer}>
-          <p>{`${getTotalProductsCount()} products:`}</p>
+          <p>{`${getTotalProductsCount()} ${intl.formatMessage({
+            id: "components.basketProducts.products",
+          })}`}</p>
           <p>{`£${getTotalBasketPrice()}`}</p>
         </div>
         {!!getTotalProductsCount() && (
           <div className={styles.basketProductsHeadingContainer}>
-            <button onClick={() => handleCheckout()}>Checkout</button>
+            <button onClick={() => handleCheckout()}>
+              {intl.formatMessage({
+                id: "components.basketProducts.button",
+              })}
+            </button>
           </div>
         )}
       </div>
@@ -128,6 +138,7 @@ const BasketProducts = () => {
 export default BasketProducts
 
 const BasketProduct = ({ name, image, imageAlt, price, id }) => {
+  const intl = useIntl()
   const user = useSelector(state => state.user)
   const token = localStorage.getItem("e-commerce-token")
   const dispatch = useDispatch()
@@ -190,7 +201,9 @@ const BasketProduct = ({ name, image, imageAlt, price, id }) => {
         <p>{name}</p>
         <p className={styles.productPrice}>{`£${price}`}</p>
         <div className={styles.quantityContainer}>
-          <p>{`Quantity: ${getQuantity()}`}</p>
+          <p>{`${intl.formatMessage({
+            id: "components.basketProducts.quantity",
+          })} ${getQuantity()}`}</p>
           <button onClick={() => addToBasket(id)}>
             <FontAwesomeIcon icon="plus" className={styles.fontAwesomeIcon} />
           </button>

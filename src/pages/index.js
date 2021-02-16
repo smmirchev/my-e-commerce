@@ -1,4 +1,5 @@
 import React from "react"
+import { useIntl } from "gatsby-plugin-intl"
 import SEO from "@components/SEO"
 import Layout from "@components/Layout"
 import Categories from "@views/home/Categories"
@@ -8,9 +9,15 @@ import Cta from "@views/home/Cta"
 import FeaturedProducts from "@views/home/FeaturedProducts"
 
 const IndexPage = () => {
+  const intl = useIntl()
+
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title={intl.formatMessage({
+          id: "page.home.title",
+        })}
+      />
       <div className={styles.homeWrapper}>
         <Container>
           <Categories />

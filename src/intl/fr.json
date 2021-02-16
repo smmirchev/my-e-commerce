@@ -1,22 +1,102 @@
 {
-  "title": "Gatsby 한국어",
-  "description": "이 default-starter-intl 패키지를 사용하여 Gatsby 프로젝트를 시작하십시오. 이 베어 본 스타터는 필요한 Gatsby 주요 구성 파일을 제공합니다.",
+  "title": "Gatsby English",
+  "description": "Kick off your next, great Gatsby project with this default-starter-intl. This barebones starter ships with the main Gatsby configuration files you might need.",
   "author": "@wiziple",
-  "hello": "여러분 안녕하세요",
-  "welcome": "개츠비 사이트에 오신 것을 환영합니다",
-  "title_page2": "2페이지",
-  "hello_page2": "안녕하세요. 2페이지입니다.",
-  "go_page2": "2페이지로 이동",
-  "build": "이제 새로운 것을 만들어 보세요.",
-  "welcome_page2": "2페이지 입니다",
-  "go_back": "홈페이지로 가기",
+  "hello": "Hi people",
+  "welcome": "Welcome to your new Gatsby site.",
+  "title_page2": "Page two",
+  "hello_page2": "Hi from the second page",
+  "go_page2": "Go to page 2",
+  "build": "Now go build something great.",
+  "welcome_page2": "Welcome to page 2",
+  "go_back": "Go back to the homepage",
   "notfound": {
-    "header": "페이지를 찾을 수 없습니다",
-    "description": "페이지가 존재하지 않습니다."
+    "header": "NOT FOUND",
+    "description": "You just hit a route that doesn't exist... the sadness."
   },
   "header": {
     "topNavigation": {
-      "help": "help"
+      "help": "Aider",
+      "contact": "Nous contacter"
+    },
+    "bottomNavigation": {
+      "basket": {
+        "name": "Panier",
+        "logoutMessage": "pour voir votre panier.",
+        "logoutLink": "Connexion"
+      },
+      "account": {
+        "name": "Compte",
+        "logoutTopButton": "Connexion",
+        "logoutBottomButton": "S'inscrire",
+        "loginGreeting": "Bonjour",
+        "lognButton": "Se déconnecter"
+      },
+      "searchPlaceholder": "Des produits...",
+      "productsFound": "Produits trouvés:"
+    }
+  },
+  "footer": {
+    "left": {
+      "text": "Ce site Web est pour la démonstration des compétences techniques uniquement. Aucun des produits ou informations présentés n'est réel.",
+      "site": "Les images du site proviennent de:"
+    },
+    "right": {
+      "helpAndInformation": "Aide et informations",
+      "faq": "FAQ",
+      "contact": "Nous contacter",
+      "help": "Aider",
+      "companyInformation": "Informations sur la société",
+      "terms": "Termes et Conditions",
+      "privacy": "Politique de confidentialité",
+      "cookies": "Avis sur les cookies"
+    }
+  },
+  "page": {
+    "home": {
+      "title": "Maison",
+      "h1": "Catégories principales"
+    },
+    "faq": {
+      "title": "FAQ",
+      "h1": "Questions fréquemment posées"
+    },
+    "help": {
+      "title": "Aider",
+      "h1": "Aider"
+    },
+    "contactUs": {
+      "title": "Nous contacter",
+      "h1": "Nous contacter"
+    },
+    "termsAndConditions": {
+      "title": "Termes et Conditions",
+      "h1": "T & C"
+    },
+    "privacyPolicy": {
+      "title": "Politique de confidentialité",
+      "h1": "Politique de confidentialité"
+    },
+    "cookiesNotice": {
+      "title": "Avis sur les cookies",
+      "h1": "Avis sur les cookies"
+    },
+    "productTemplate": {
+      "category": "Catégorie:",
+      "productOverview": "Présentation du produit",
+      "button": "Ajouter au panier",
+      "quantity": "Quantité"
+    }
+  },
+  "components": {
+    "basketProducts": {
+      "noty": "Paiement réussi",
+      "products": "des produits:",
+      "button": "Vérifier",
+      "quantity": "Quantité:"
+    },
+    "reviews": {
+      "reviews": "Commentaires"
     }
   }
 }

@@ -85,7 +85,13 @@ const BasketProducts = () => {
         timeout: "3000",
       }).show()
     } catch (error) {
-      console.log(error)
+      new Noty({
+        text: error?.message,
+        type: "success",
+        layout: "topLeft",
+        theme: "sunset",
+        timeout: "3000",
+      }).show()
     }
   }
 

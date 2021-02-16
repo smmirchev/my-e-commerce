@@ -1,7 +1,9 @@
 ---
 path: "/categories"
 id: "books"
-title: "Books"
+titleEn: "Books"
+titleDe: "Board de"
+titleFr: "Board fr"
 description: "Description for cars and boats"
 image: ../../static/images/categories-books.jpg
 imageAlt: "books"

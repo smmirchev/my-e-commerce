@@ -16,7 +16,87 @@
   },
   "header": {
     "topNavigation": {
-      "help": "help"
+      "help": "Help",
+      "contact": "Contact us"
+    },
+    "bottomNavigation": {
+      "basket": {
+        "name": "Basket",
+        "logoutMessage": "to view your basket.",
+        "logoutLink": "Login"
+      },
+      "account": {
+        "name": "Account",
+        "logoutTopButton": "Login",
+        "logoutBottomButton": "Register",
+        "loginGreeting": "Hello",
+        "lognButton": "Log out"
+      },
+      "searchPlaceholder": "Products...",
+      "productsFound": "Products found:"
+    }
+  },
+  "footer": {
+    "left": {
+      "text": "This website is for demonstration of technical skills only. None of the products or information presented is real.",
+      "site": "Site images are taken from:"
+    },
+    "right": {
+      "helpAndInformation": "Help & Information",
+      "faq": "FAQ",
+      "contact": "Contact us",
+      "help": "Help",
+      "companyInformation": "Company Information",
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy policy",
+      "cookies": "Cookies notice"
+    }
+  },
+  "page": {
+    "home": {
+      "title": "Home",
+      "h1": "Main Categories"
+    },
+    "faq": {
+      "title": "FAQ",
+      "h1": "Frequently Asked Questions"
+    },
+    "help": {
+      "title": "Help",
+      "h1": "Help"
+    },
+    "contactUs": {
+      "title": "Contact Us",
+      "h1": "Contact Us"
+    },
+    "termsAndConditions": {
+      "title": "Terms And Conditions",
+      "h1": "T & C"
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "h1": "Privacy Policy"
+    },
+    "cookiesNotice": {
+      "title": "Cookies Notice",
+      "h1": "Cookies Notice"
+    },
+    "productTemplate": {
+      "category": "Category:",
+      "productOverview": "Product Overview",
+      "button": "Add to basket",
+      "quantity": "Quantity"
+    }
+  },
+  "components": {
+    "basketProducts": {
+      "noty": "Checkout successful",
+      "products": "products:",
+      "button": "Checkout",
+      "quantity": "Quantity:"
+    },
+    "reviews": {
+      "reviews": "reviews"
     }
   }
 }

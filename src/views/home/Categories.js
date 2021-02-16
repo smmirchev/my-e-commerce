@@ -14,7 +14,9 @@ const Categories = () => {
           node {
             frontmatter {
               id
-              title
+              titleEn
+              titleDe
+              titleFr
               imageAlt
               image {
                 childImageSharp {
@@ -49,7 +51,13 @@ const Categories = () => {
                   alt={category?.imageAlt}
                 />
               </Link>
-              <h3>{category?.title}</h3>
+              <h3>
+                {intl?.locale === "de"
+                  ? category?.titleDe
+                  : intl?.locale === "fr"
+                  ? category?.titleFr
+                  : category?.titleEn}
+              </h3>
             </li>
           )
         )}

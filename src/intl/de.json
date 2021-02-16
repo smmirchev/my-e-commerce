@@ -1,22 +1,102 @@
 {
-  "title": "Gatsby Deutsch",
-  "description": "Starten Sie Ihr nächstes, tolles Gatsby-Projekt mit diesem default-starter-intl. Dieser Barebones-Starter wird mit den wichtigsten Gatsby-Konfigurationsdateien geliefert, die Sie möglicherweise benötigen.",
+  "title": "Gatsby English",
+  "description": "Kick off your next, great Gatsby project with this default-starter-intl. This barebones starter ships with the main Gatsby configuration files you might need.",
   "author": "@wiziple",
-  "hello": "hallo Leute",
-  "welcome": "Willkommen auf Ihrer neuen Gatsby-Site.",
-  "title_page2": "Seite zwei",
-  "hello_page2": "Hallo von der zweiten Seite",
-  "go_page2": "Gehen Sie zu Seite 2",
-  "build": "Jetzt mach etwas Großartiges.",
-  "welcome_page2": "Willkommen auf Seite 2",
-  "go_back": "Gehe zurück zur Startseite",
+  "hello": "Hi people",
+  "welcome": "Welcome to your new Gatsby site.",
+  "title_page2": "Page two",
+  "hello_page2": "Hi from the second page",
+  "go_page2": "Go to page 2",
+  "build": "Now go build something great.",
+  "welcome_page2": "Welcome to page 2",
+  "go_back": "Go back to the homepage",
   "notfound": {
-    "header": "Nicht gefunden",
-    "description": "Sie haben gerade eine Route erreicht, die nicht existiert... die Traurigkeit."
+    "header": "NOT FOUND",
+    "description": "You just hit a route that doesn't exist... the sadness."
   },
   "header": {
     "topNavigation": {
-      "help": "help"
+      "help": "Hilfe",
+      "contact": "Kontaktiere uns"
+    },
+    "bottomNavigation": {
+      "basket": {
+        "name": "Korb",
+        "logoutMessage": "um Ihren Warenkorb anzuzeigen.",
+        "logoutLink": "Anmeldung"
+      },
+      "account": {
+        "name": "Konto",
+        "logoutTopButton": "Anmeldung",
+        "logoutBottomButton": "Registrieren",
+        "loginGreeting": "Hallo",
+        "lognButton": "Ausloggen"
+      },
+      "searchPlaceholder": "Produkte...",
+      "productsFound": "Gefundene Produkte:"
+    }
+  },
+  "footer": {
+    "left": {
+      "text": "Diese Website dient nur zur Demonstration technischer Fähigkeiten. Keines der präsentierten Produkte oder Informationen ist echt.",
+      "site": "Site-Bilder stammen von:"
+    },
+    "right": {
+      "helpAndInformation": "Hilfe & Informationen",
+      "faq": "FAQ",
+      "contact": "Kontaktiere uns",
+      "help": "Hilfe",
+      "companyInformation": "Firmeninformation",
+      "terms": "Geschäftsbedingungen",
+      "privacy": "Datenschutz-Bestimmungen",
+      "cookies": "Cookies bemerken"
+    }
+  },
+  "page": {
+    "home": {
+      "title": "Zuhause",
+      "h1": "Hauptkategorien"
+    },
+    "faq": {
+      "title": "FAQ",
+      "h1": "Häufig gestellte Fragen"
+    },
+    "help": {
+      "title": "Hilfe",
+      "h1": "Hilfe"
+    },
+    "contactUs": {
+      "title": "Kontaktiere uns",
+      "h1": "Kontaktiere uns"
+    },
+    "termsAndConditions": {
+      "title": "Geschäftsbedingungen",
+      "h1": "Geschäftsbedingungen"
+    },
+    "privacyPolicy": {
+      "title": "Datenschutz-Bestimmungen",
+      "h1": "Datenschutz-Bestimmungen"
+    },
+    "cookiesNotice": {
+      "title": "Cookies Bemerken",
+      "h1": "Cookies Bemerken"
+    },
+    "productTemplate": {
+      "category": "Kategorie:",
+      "productOverview": "Produktübersicht",
+      "button": "Zum Warenkorb hinzufügen",
+      "quantity": "Menge"
+    }
+  },
+  "components": {
+    "basketProducts": {
+      "noty": "Kaufabwicklung erfolgreich",
+      "products": "produkte::",
+      "button": "Überprüfen",
+      "quantity": "Menge:"
+    },
+    "reviews": {
+      "reviews": "bewertungen"
     }
   }
 }

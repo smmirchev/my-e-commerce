@@ -51,6 +51,8 @@ const Header = () => {
   const [basketModal, setBasketModal] = useState(false)
   const [searchModal, setSearchModal] = useState(false)
 
+  console.log(intl)
+
   const $searchBox = useDetectIfClickedOutside(() =>
     setShowSearchOverlay(false)
   )

@@ -2,10 +2,10 @@
 product_id: polo-neck
 category_id: clothing
 name_en: Polo Neck
-name_fr: Polo Neck
-name_de: Polo Neck
-reviews: 106
-price: 74.99
+name_fr: Col roulé
+name_de: Rollkragen
+reviews: 32
+price: 9.85
 image: ../../../static/images/products/clothing-polo-neck.jpg
 imageAlt: "Polo Neck"
 ---

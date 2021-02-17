@@ -2,10 +2,10 @@
 product_id: vitamin-d
 category_id: supplements
 name_en: Vitamin D
-name_fr: Vitamin D
-name_de: Vitamin D
-reviews: 106
-price: 74.99
+name_fr: Vitamine D
+name_de: Vitamin-D
+reviews: 1791
+price: 3.99
 image: ../../../static/images/products/supplements-vitamin-d.jpg
 imageAlt: "Vitamin D"
 ---

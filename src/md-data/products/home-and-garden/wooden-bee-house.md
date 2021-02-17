@@ -2,11 +2,11 @@
 product_id: wooden-bee-house
 category_id: home-and-garden
 name_en: Wooden Bee House
-name_fr: Wooden Bee House
-name_de: Wooden Bee House
-reviews: 72
+name_fr: Maison d'abeille en bois
+name_de: Bienenhaus aus Holz
+reviews: 15
 featured: true
-price: 29.99
+price: 11.70
 image: ../../../static/images/products/home-and-garden-bee-house.jpg
 imageAlt: "Wooden Bee House"
 ---

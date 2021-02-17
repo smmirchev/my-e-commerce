@@ -2,10 +2,10 @@
 product_id: tennis-racket
 category_id: sports
 name_en: Tennis Racket
-name_fr: Tennis Racket
-name_de: Tennis Racket
-reviews: 106
-price: 74.99
+name_fr: Raquette de tennis
+name_de: Tennisschläger
+reviews: 841
+price: 22.99
 image: ../../../static/images/products/sports-tennis-racket.jpg
 imageAlt: "Tennis Racket"
 ---

@@ -2,10 +2,10 @@
 product_id: omega-three
 category_id: supplements
 name_en: Omega Three
-name_fr: Omega Three
-name_de: Omega Three
-reviews: 106
-price: 74.99
+name_fr: Oméga trois
+name_de: Omega Drei
+reviews: 388
+price: 18.99
 image: ../../../static/images/products/supplements-omega-three.jpg
 imageAlt: "Omega Three pills"
 ---

@@ -2,10 +2,10 @@
 product_id: garden-ornament-gnome
 category_id: home-and-garden
 name_en: Garden Ornament Gnome
-name_fr: Garden Ornament Gnome
-name_de: Garden Ornament Gnome
-reviews: 52
-price: 14.99
+name_fr: Nain d'ornement de jardin
+name_de: Garten Ornament Gnome
+reviews: 177
+price: 28.40
 image: ../../../static/images/products/home-and-garden-garden-gnome.jpg
 imageAlt: "Garden Ornament Gnome"
 ---

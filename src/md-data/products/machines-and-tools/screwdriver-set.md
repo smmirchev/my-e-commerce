@@ -2,10 +2,10 @@
 product_id: screwdriver-set
 category_id: machines-and-tools
 name_en: Screwdriver Set
-name_fr: Screwdriver Set
-name_de: Screwdriver Set
-reviews: 106
-price: 74.99
+name_fr: Ensemble de tournevis
+name_de: Schraubenzieher set
+reviews: 290
+price: 20.00
 image: ../../../static/images/products/machine-tools-screwdriver-set.jpg
 imageAlt: "Screwdriver Set"
 ---

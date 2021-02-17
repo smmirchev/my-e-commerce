@@ -4,8 +4,8 @@ category_id: clothing
 name_en: T-Shirt
 name_fr: T-Shirt
 name_de: T-Shirt
-reviews: 106
-price: 74.99
+reviews: 1853
+price: 2.99
 image: ../../../static/images/products/clothing-t-shirt.jpg
 imageAlt: "T-Shirt"
 ---

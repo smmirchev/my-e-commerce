@@ -2,10 +2,10 @@
 product_id: the-lord-of-the-rings-trilogy
 category_id: books
 name_en: The Lord Of The Rings Trilogy
-name_fr: The Lord Of The Rings Trilogy
-name_de: The Lord Of The Rings Trilogy
-reviews: 106
-price: 74.99
+name_fr: La trilogie du Seigneur des anneaux
+name_de: Die Herr der Ringe-Trilogie
+reviews: 19805
+price: 23.99
 image: ../../../static/images/products/books-the-lord-of-the-rings-trilogy.jpg
 imageAlt: "The Lord Of The Rings Trilogy books"
 ---

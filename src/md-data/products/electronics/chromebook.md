@@ -4,8 +4,8 @@ category_id: electronics
 name_en: Chromebook
 name_fr: Chromebook
 name_de: Chromebook
-reviews: 106
-price: 74.99
+reviews: 741
+price: 499.99
 image: ../../../static/images/products/electronics-chromebook.jpg
 imageAlt: "Chromebook"
 ---

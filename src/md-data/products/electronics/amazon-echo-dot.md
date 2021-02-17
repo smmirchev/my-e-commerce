@@ -4,9 +4,9 @@ category_id: electronics
 name_en: Amazon Echo Dot
 name_fr: Amazon Echo Dot
 name_de: Amazon Echo Dot
-reviews: 106
+reviews: 43758
 featured: true
-price: 74.99
+price: 57.99
 image: ../../../static/images/products/electronics-amazon-echo-dot.jpg
 imageAlt: "Amazon Echo Dot"
 ---

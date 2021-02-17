@@ -2,10 +2,10 @@
 product_id: sewing-machine
 category_id: machines-and-tools
 name_en: Sewing Machine
-name_fr: Sewing Machine
-name_de: Sewing Machine
-reviews: 106
-price: 74.99
+name_fr: Machine à coudre
+name_de: Nähmaschine
+reviews: 173
+price: 211.99
 image: ../../../static/images/products/machine-tools-sewing-machine.jpg
 imageAlt: "Sewing Machine"
 ---

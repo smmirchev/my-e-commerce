@@ -4,8 +4,8 @@ category_id: electronics
 name_en: Apple Watch
 name_fr: Apple Watch
 name_de: Apple Watch
-reviews: 106
-price: 74.99
+reviews: 3881
+price: 276.00
 image: ../../../static/images/products/electronics-apple-watch.jpg
 imageAlt: "Apple Watch"
 ---

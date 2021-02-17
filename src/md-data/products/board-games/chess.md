@@ -2,10 +2,10 @@
 product_id: chess
 category_id: board-games
 name_en: Chess
-name_fr: Chess
-name_de: Chess
-reviews: 470
-price: 16.99
+name_fr: Échecs
+name_de: Schach
+reviews: 9864
+price: 32.99
 image: ../../../static/images/products/board-games-chess.jpg
 imageAlt: "chess "
 ---

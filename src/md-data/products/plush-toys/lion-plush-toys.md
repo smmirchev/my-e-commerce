@@ -2,10 +2,10 @@
 product_id: lion-plush-toy
 category_id: plush-toys
 name_en: Lion Plush Toy
-name_fr: Lion Plush Toy
-name_de: Lion Plush Toy
-reviews: 4460
-price: 26.99
+name_fr: Jouet en peluche Lion
+name_de: Löwe Plüschtier
+reviews: 164
+price: 11.20
 image: ../../../static/images/products/plush-toys-lion-plush-toy.jpg
 imageAlt: "lion plush toy "
 ---

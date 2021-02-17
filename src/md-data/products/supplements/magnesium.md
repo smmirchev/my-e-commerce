@@ -2,11 +2,11 @@
 product_id: magnesium
 category_id: supplements
 name_en: Magnesium
-name_fr: Magnesium
+name_fr: Magnésium
 name_de: Magnesium
 reviews: 106
 featured: true
-price: 74.99
+price: 4.99
 image: ../../../static/images/products/supplements-magnesium.jpg
 imageAlt: "Magnesium pills"
 ---

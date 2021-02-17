@@ -2,10 +2,10 @@
 product_id: pearls
 category_id: jewellery
 name_en: Pearls
-name_fr: Pearls
-name_de: Pearls
-reviews: 4460
-price: 26.99
+name_fr: Perles
+name_de: Perlen
+reviews: 81
+price: 13.25
 image: ../../../static/images/products/jewellery-pearls.jpg
 imageAlt: "pearls "
 ---

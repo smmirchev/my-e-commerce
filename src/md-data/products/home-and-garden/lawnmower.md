@@ -2,10 +2,10 @@
 product_id: lawnmower
 category_id: home-and-garden
 name_en: Lawnmower
-name_fr: Lawnmower
-name_de: Lawnmower
-reviews: 106
-price: 74.99
+name_fr: Tondeuse à gazon
+name_de: Rasenmäher
+reviews: 1895
+price: 75.00
 image: ../../../static/images/products/home-and-garden-lawnmower.jpg
 imageAlt: "Lawnmower"
 ---

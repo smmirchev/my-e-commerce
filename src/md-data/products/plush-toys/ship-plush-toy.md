@@ -2,10 +2,10 @@
 product_id: ship-plush-toy
 category_id: plush-toys
 name_en: Ship Plush Toy
-name_fr: Ship Plush Toy
-name_de: Ship Plush Toy
-reviews: 4460
-price: 26.99
+name_fr: Jouet en peluche de bateau
+name_de: Schiff Plüschtier
+reviews: 22
+price: 16.10
 image: ../../../static/images/products/plush-toys-ship-plush-toy.jpg
 imageAlt: "ship plush toy "
 ---

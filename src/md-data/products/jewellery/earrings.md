@@ -2,10 +2,10 @@
 product_id: earrings
 category_id: jewellery
 name_en: Earrings
-name_fr: Earrings
-name_de: Earrings
-reviews: 4460
-price: 26.99
+name_fr: Des boucles d'oreilles
+name_de: Ohrringe
+reviews: 11
+price: 6.99
 image: ../../../static/images/products/jewellery-earrings.jpg
 imageAlt: "earrings "
 ---

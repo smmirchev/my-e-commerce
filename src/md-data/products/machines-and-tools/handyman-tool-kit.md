@@ -2,11 +2,11 @@
 product_id: handyman-tool-kit
 category_id: machines-and-tools
 name_en: Handyman Tool Kit
-name_fr: Handyman Tool Kit
-name_de: Handyman Tool Kit
-reviews: 106
+name_fr: Trousse à outils pour bricoleur
+name_de: Handwerker-Werkzeugsatz
+reviews: 222
 featured: true
-price: 74.99
+price: 37.99
 image: ../../../static/images/products/machine-tools-handyman-tool-kit.jpg
 imageAlt: "Handyman Tool Kit"
 ---

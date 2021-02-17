@@ -2,10 +2,10 @@
 product_id: sewing-kit
 category_id: machines-and-tools
 name_en: Sewing Kit
-name_fr: Sewing Kit
-name_de: Sewing Kit
-reviews: 106
-price: 74.99
+name_fr: Kit de couture
+name_de: Näh-Set
+reviews: 6043
+price: 6.99
 image: ../../../static/images/products/machine-tools-sewing-kit.jpg
 imageAlt: "Sewing Kit"
 ---

@@ -2,8 +2,8 @@
 path: "/categories"
 id: "electronics"
 titleEn: "Electronics"
-titleDe: "Board de"
-titleFr: "Board fr"
+titleDe: "Elektronik"
+titleFr: "Électronique"
 description: "Description for real estate"
 image: ../../static/images/categories-electronics.jpg
 imageAlt: "laptop"

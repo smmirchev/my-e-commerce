@@ -2,10 +2,10 @@
 product_id: rabbit-plush-toy
 category_id: plush-toys
 name_en: Rabbit Plush Toy
-name_fr: Rabbit Plush Toy
-name_de: Rabbit Plush Toy
-reviews: 4460
-price: 26.99
+name_fr: Jouet en peluche lapin
+name_de: Kaninchen Plüschtier
+reviews: 54
+price: 9.99
 image: ../../../static/images/products/plush-toys-rabbit-plush-toy.jpg
 imageAlt: "rabbit plush toy "
 ---

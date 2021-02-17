@@ -4,8 +4,8 @@ category_id: board-games
 name_en: Scrabble
 name_fr: Scrabble
 name_de: Scrabble
-reviews: 698
-price: 22.99
+reviews: 7
+price: 33.99
 image: ../../../static/images/products/board-games-scrabble.jpg
 imageAlt: "scrabble "
 ---

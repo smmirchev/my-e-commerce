@@ -2,11 +2,11 @@
 product_id: ab-straps-pair
 category_id: sports
 name_en: Ab Straps Pair
-name_fr: Ab Straps Pair
-name_de: Ab Straps Pair
+name_fr: Paire de bretelles abdominales
+name_de: Ab Straps Paar
 featured: true
-reviews: 106
-price: 74.99
+reviews: 944
+price: 44.99
 image: ../../../static/images/products/sports-ab-straps-pair.jpg
 imageAlt: "Ab Straps Pair"
 ---

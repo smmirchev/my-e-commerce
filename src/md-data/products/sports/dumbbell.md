@@ -2,10 +2,10 @@
 product_id: dumbbell
 category_id: sports
 name_en: Dumbbell
-name_fr: Dumbbell
-name_de: Dumbbell
-reviews: 106
-price: 74.99
+name_fr: Haltère
+name_de: Hantel
+reviews: 4
+price: 54.99
 image: ../../../static/images/products/sports-dumbbell.jpg
 imageAlt: "Dumbbell"
 ---

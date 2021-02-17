@@ -2,10 +2,10 @@
 product_id: ring
 category_id: jewellery
 name_en: Ring
-name_fr: Ring
+name_fr: Bague
 name_de: Ring
-reviews: 4460
-price: 26.99
+reviews: 4
+price: 22.99
 image: ../../../static/images/products/jewellery-ring.jpg
 imageAlt: "ring "
 ---

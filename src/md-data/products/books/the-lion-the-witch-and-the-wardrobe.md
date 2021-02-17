@@ -2,10 +2,10 @@
 product_id: the-lion-the-witch-and-the-wardrobe
 category_id: books
 name_en: The Lion The Witch And The Wardrobe
-name_fr: The Lion The Witch And The Wardrobe
-name_de: The Lion The Witch And The Wardrobe
-reviews: 106
-price: 74.99
+name_fr: Le Lion, la Sorcière et l'Armoire
+name_de: Der Löwe, die Hexe und der Kleiderschrank
+reviews: 6543
+price: 7.50
 image: ../../../static/images/products/books-the-lion-the-witch-and-the-wardrobe.jpg
 imageAlt: "The Lion The Witch And The Wardrobe book"
 ---

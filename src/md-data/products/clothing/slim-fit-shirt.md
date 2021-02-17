@@ -2,10 +2,10 @@
 product_id: slim-fit-shirt
 category_id: clothing
 name_en: Slim Fit Shirt
-name_fr: Slim Fit Shirt
+name_fr: Chemise coupe slim
 name_de: Slim Fit Shirt
-reviews: 106
-price: 74.99
+reviews: 39
+price: 11.30
 image: ../../../static/images/products/clothing-slim-fit-shirt.jpg
 imageAlt: "Slim Fit Shirt"
 ---

@@ -3,9 +3,9 @@ product_id: bracelet
 category_id: jewellery
 name_en: Bracelet
 name_fr: Bracelet
-name_de: Bracelet
-reviews: 4460
-price: 26.99
+name_de: Armband
+reviews: 46
+price: 17.99
 image: ../../../static/images/products/jewellery-bracelet.jpg
 imageAlt: "bracelet "
 ---

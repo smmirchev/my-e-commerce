@@ -2,8 +2,8 @@
 path: "/categories"
 id: "supplements"
 titleEn: "Supplements"
-titleDe: "Board de"
-titleFr: "Board fr"
+titleDe: "Ergänzungen"
+titleFr: "Suppléments"
 description: "Description for cars and boats"
 image: ../../static/images/categories-supplements.jpg
 imageAlt: "vitamins"

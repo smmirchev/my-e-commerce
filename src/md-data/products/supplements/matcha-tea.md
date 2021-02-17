@@ -2,10 +2,10 @@
 product_id: matcha-tea
 category_id: supplements
 name_en: Matcha Tea
-name_fr: Matcha Tea
+name_fr: Thé matcha
 name_de: Matcha Tea
-reviews: 106
-price: 74.99
+reviews: 7411
+price: 10.10
 image: ../../../static/images/products/supplements-matcha-tea.jpg
 imageAlt: "Matcha Tea pills"
 ---

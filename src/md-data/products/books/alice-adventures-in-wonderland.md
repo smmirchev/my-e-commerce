@@ -2,11 +2,11 @@
 product_id: alice-adventures-in-wonderland
 category_id: books
 name_en: Alice Adventures In Wonderland
-name_fr: Alice Adventures In Wonderland
-name_de: Alice Adventures In Wonderland
-reviews: 106
+name_fr: Alice Adventures au pays des merveilles
+name_de: Alice Abenteuer im Wunderland
+reviews: 12487
 featured: true
-price: 74.99
+price: 4.80
 image: ../../../static/images/products/books-alice-adventures-in-wonderland.jpg
 imageAlt: "Alice Adventures In Wonderland book"
 ---

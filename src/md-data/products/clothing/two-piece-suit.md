@@ -2,11 +2,11 @@
 product_id: two-piece-suit
 category_id: clothing
 name_en: Two-Piece Suit
-name_fr: Two-Piece Suit
-name_de: Two-Piece Suit
+name_fr: Costume deux pièces
+name_de: Zweiteiliger Anzug
 reviews: 106
 featured: true
-price: 74.99
+price: 64.99
 image: ../../../static/images/products/clothing-two-piece-suit.jpg
 imageAlt: "Two-Piece Suit"
 ---

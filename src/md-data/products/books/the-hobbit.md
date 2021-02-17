@@ -2,10 +2,10 @@
 product_id: the-hobbit
 category_id: books
 name_en: The Hobbit
-name_fr: The Hobbit
-name_de: The Hobbit
-reviews: 106
-price: 74.99
+name_fr: Le Hobbit
+name_de: Der Hobbit
+reviews: 14754
+price: 5.99
 image: ../../../static/images/products/books-the-hobbit.jpg
 imageAlt: "The Hobbit book"
 ---

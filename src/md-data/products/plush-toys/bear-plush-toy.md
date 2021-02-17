@@ -2,10 +2,10 @@
 product_id: bear-plush-toy
 category_id: plush-toys
 name_en: Bear Plush Toy
-name_fr: Bear Plush Toy
-name_de: Bear Plush Toy
-reviews: 4460
-price: 26.99
+name_fr: Ours en peluche
+name_de: Bär Plüschtier
+reviews: 1972
+price: 5.99
 image: ../../../static/images/products/plush-toys-bear-plush-toy.jpg
 imageAlt: "bear plush toy "
 ---

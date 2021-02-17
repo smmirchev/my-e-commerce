@@ -2,9 +2,9 @@
 product_id: garden-ornament-fairy
 category_id: home-and-garden
 name_en: Garden Ornament Fairy
-name_fr: Garden Ornament Fairy
-name_de: Garden Ornament Fairy
-reviews: 28
+name_fr: Fée d'ornement de jardin
+name_de: Gartenschmuckfee
+reviews: 117
 price: 24.99
 image: ../../../static/images/products/home-and-garden-garden-fairy.jpg
 imageAlt: "Garden Ornament Fairy"

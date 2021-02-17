@@ -4,8 +4,8 @@ category_id: electronics
 name_en: Amazon Echo
 name_fr: Amazon Echo
 name_de: Amazon Echo
-reviews: 106
-price: 74.99
+reviews: 9374
+price: 106.99
 image: ../../../static/images/products/electronics-amazon-echo.jpg
 imageAlt: "amazon echo"
 ---

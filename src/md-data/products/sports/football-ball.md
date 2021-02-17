@@ -2,10 +2,10 @@
 product_id: football-ball
 category_id: sports
 name_en: Football Ball
-name_fr: Football Ball
-name_de: Football Ball
-reviews: 106
-price: 74.99
+name_fr: Ballon de football
+name_de: Fußball Ball
+reviews: 339
+price: 31.99
 image: ../../../static/images/products/sports-football-ball.jpg
 imageAlt: "Football Ball"
 ---

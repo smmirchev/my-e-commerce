@@ -1,4 +1,5 @@
 import { navigate } from "gatsby-plugin-intl"
+import { useIntl } from "react-intl"
 import jwtDecode from "jwt-decode"
 import Noty from "noty"
 import { useDispatch, useSelector } from "react-redux"
@@ -15,6 +16,7 @@ import { loginUser } from "@store/user"
 
 const Login = () => {
   const dispatch = useDispatch()
+  const intl = useIntl()
   const user = useSelector(state => state.user)
 
   const initialValues = {
@@ -48,10 +50,18 @@ const Login = () => {
 
   return (
     <Layout>
-      <SEO title="Login" />
+      <SEO
+        title={intl.formatMessage({
+          id: "page.login.title",
+        })}
+      />
       <Container>
         <div className={styles.loginRegisterWrapper}>
-          <h1>Login</h1>
+          <h1>
+            {intl.formatMessage({
+              id: "page.login.h1",
+            })}
+          </h1>
           <Formik
             validationSchema={yupObjectSchema}
             initialValues={initialValues}
@@ -79,10 +89,16 @@ const LoginForm = ({
   touched,
   formKey,
 }) => {
+  const intl = useIntl()
+
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.formField}>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">
+          {intl.formatMessage({
+            id: "page.login.labels.email",
+          })}
+        </label>
         <input
           id="email"
           type="email"
@@ -96,7 +112,11 @@ const LoginForm = ({
       </div>
 
       <div className={styles.formField}>
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">
+          {intl.formatMessage({
+            id: "page.login.labels.password",
+          })}
+        </label>
         <input
           id="password"
           type="password"

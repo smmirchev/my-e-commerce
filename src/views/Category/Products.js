@@ -1,4 +1,5 @@
 import React from "react"
+import { useIntl } from "react-intl"
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby-plugin-intl"
 import styles from "@views/category/styles.module.scss"
@@ -16,6 +17,8 @@ const Products = ({ currentCategory, repeat = false }) => {
               id: product_id
               categoryId: category_id
               nameEn: name_en
+              nameDe: name_de
+              nameFr: name_fr
               description
               reviews
               price
@@ -33,6 +36,8 @@ const Products = ({ currentCategory, repeat = false }) => {
       }
     }
   `)
+
+  const intl = useIntl()
 
   const ProductItem = () =>
     products?.allMarkdownRemark?.edges
@@ -55,7 +60,13 @@ const Products = ({ currentCategory, repeat = false }) => {
                 objectPosition="50% 50%"
               />
             </div>
-            <h3>{product?.nameEn}</h3>
+            <h3>
+              {intl?.locale === "de"
+                ? product?.nameDe
+                : intl?.locale === "fr"
+                ? product?.nameFr
+                : product?.nameEn}
+            </h3>
             <Reviews reviewsNumber={product?.reviews} />
 
             <p className={styles.price}>£{product?.price}</p>

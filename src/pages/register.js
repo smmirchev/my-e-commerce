@@ -1,4 +1,5 @@
 import { navigate } from "gatsby-plugin-intl"
+import { useIntl } from "react-intl"
 import jwtDecode from "jwt-decode"
 import Noty from "noty"
 import { useDispatch, useSelector } from "react-redux"
@@ -15,6 +16,7 @@ import { loginUser } from "@store/user"
 
 const Register = () => {
   const dispatch = useDispatch()
+  const intl = useIntl()
   const user = useSelector(state => state.user)
 
   const initialValues = {
@@ -53,10 +55,18 @@ const Register = () => {
 
   return (
     <Layout>
-      <SEO title="Register" />
+      <SEO
+        title={intl.formatMessage({
+          id: "page.register.title",
+        })}
+      />
       <Container>
         <div className={styles.loginRegisterWrapper}>
-          <h1>Create an account</h1>
+          <h1>
+            {intl.formatMessage({
+              id: "page.register.h1",
+            })}
+          </h1>
           <Formik
             validationSchema={yupObjectSchema}
             initialValues={initialValues}
@@ -84,10 +94,16 @@ const RegisterForm = ({
   touched,
   formKey,
 }) => {
+  const intl = useIntl()
+
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.formField}>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">
+          {intl.formatMessage({
+            id: "page.register.labels.username",
+          })}
+        </label>
         <input
           id="username"
           type="text"
@@ -101,7 +117,11 @@ const RegisterForm = ({
       </div>
 
       <div className={styles.formField}>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">
+          {intl.formatMessage({
+            id: "page.register.labels.email",
+          })}
+        </label>
         <input
           id="email"
           type="email"
@@ -115,7 +135,11 @@ const RegisterForm = ({
       </div>
 
       <div className={styles.formField}>
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">
+          {intl.formatMessage({
+            id: "page.register.labels.password",
+          })}
+        </label>
         <input
           id="password"
           type="password"
@@ -129,7 +153,11 @@ const RegisterForm = ({
       </div>
 
       <div className={styles.formField}>
-        <label htmlFor="confirmPassword">Confirm Password</label>
+        <label htmlFor="confirmPassword">
+          {intl.formatMessage({
+            id: "page.register.labels.confirmPassword",
+          })}
+        </label>
         <input
           id="confirmPassword"
           type="password"

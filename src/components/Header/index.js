@@ -51,8 +51,6 @@ const Header = () => {
   const [basketModal, setBasketModal] = useState(false)
   const [searchModal, setSearchModal] = useState(false)
 
-  console.log(intl)
-
   const $searchBox = useDetectIfClickedOutside(() =>
     setShowSearchOverlay(false)
   )
@@ -127,9 +125,7 @@ const Header = () => {
               <div className={styles.searchBox}>
                 <input
                   ref={$searcInput}
-                  placeholder={intl.formatMessage({
-                    id: "header.searchPlaceholder",
-                  })}
+                  placeholder="Products..."
                   type="search"
                   value={searchQuery}
                   onChange={e => setSearchQuery(e?.target?.value)}
@@ -149,7 +145,13 @@ const Header = () => {
                       id: "header.bottomNavigation.productsFound",
                     })}
                   </h3>
-                  {!queryProducts().length && <p>No products found.</p>}
+                  {!queryProducts().length && (
+                    <p>
+                      {intl.formatMessage({
+                        id: "header.bottomNavigation.noProductsFound",
+                      })}
+                    </p>
+                  )}
                   <DisplayFoundProducts />
                 </div>
               )}
@@ -269,9 +271,7 @@ const Header = () => {
             <div className={styles.searchBox}>
               <input
                 ref={$searcInput}
-                placeholder={intl.formatMessage({
-                  id: "header.bottomNavigation.searchPlaceholder",
-                })}
+                placeholder="Products..."
                 type="search"
                 value={searchQuery}
                 onChange={e => setSearchQuery(e?.target?.value)}

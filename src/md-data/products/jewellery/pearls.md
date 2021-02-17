@@ -4,6 +4,7 @@ category_id: jewellery
 name_en: Pearls
 name_fr: Perles
 name_de: Perlen
+featured: true
 reviews: 81
 price: 13.25
 image: ../../../static/images/products/jewellery-pearls.jpg

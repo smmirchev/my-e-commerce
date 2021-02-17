@@ -1,19 +1,4 @@
 {
-  "title": "Gatsby English",
-  "description": "Kick off your next, great Gatsby project with this default-starter-intl. This barebones starter ships with the main Gatsby configuration files you might need.",
-  "author": "@wiziple",
-  "hello": "Hi people",
-  "welcome": "Welcome to your new Gatsby site.",
-  "title_page2": "Page two",
-  "hello_page2": "Hi from the second page",
-  "go_page2": "Go to page 2",
-  "build": "Now go build something great.",
-  "welcome_page2": "Welcome to page 2",
-  "go_back": "Go back to the homepage",
-  "notfound": {
-    "header": "NOT FOUND",
-    "description": "You just hit a route that doesn't exist... the sadness."
-  },
   "header": {
     "topNavigation": {
       "help": "Aider",
@@ -32,7 +17,6 @@
         "loginGreeting": "Bonjour",
         "logoutButton": "Se déconnecter"
       },
-      "searchPlaceholder": "Des produits...",
       "productsFound": "Produits trouvés:",
       "noProductsFound": "Aucun produit trouvé."
     }
@@ -57,6 +41,26 @@
     "home": {
       "title": "Maison",
       "h1": "Catégories principales"
+    },
+    "login": {
+      "title": "Connexion",
+      "h1": "Connexion",
+      "button": "Nous faire parvenir",
+      "labels": {
+        "email": "Email",
+        "password": "Mot de passe"
+      }
+    },
+    "register": {
+      "title": "S'inscrire",
+      "h1": "Créer un compte",
+      "button": "Nous faire parvenir",
+      "labels": {
+        "username": "Nom d'utilisateur",
+        "email": "Email",
+        "password": "Mot de passe",
+        "confirmPassword": "Confirmez le mot de passe"
+      }
     },
     "faq": {
       "title": "FAQ",

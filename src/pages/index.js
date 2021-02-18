@@ -1,6 +1,6 @@
 import React from "react"
 import { useIntl } from "gatsby-plugin-intl"
-import SEO from "@components/SEO"
+import SEO from "@components/SEO.js"
 import Layout from "@components/Layout"
 import Categories from "@views/home/Categories"
 import styles from "@views/home/styles.module.scss"

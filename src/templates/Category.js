@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import SEO from "@components/SEO"
+import SEO from "@components/SEO.js"
 import Layout from "@components/Layout"
 import Products from "@views/Category/Products"
 import styles from "@views/Category/styles.module.scss"
@@ -10,8 +10,8 @@ const Category = ({ data }) => {
   const post = data?.markdownRemark
   return (
     <Layout>
+      <SEO title={post?.frontmatter?.title} />
       <div className={styles.categoryWrapper}>
-        <SEO title={post?.frontmatter?.title} />
         <Container>
           <h1 className={styles.templateHeading}>{post?.frontmatter?.title}</h1>
           <Products

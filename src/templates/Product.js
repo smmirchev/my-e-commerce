@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import SEO from "@components/SEO"
+import SEO from "@components/SEO.js"
 import Layout from "@components/Layout"
 import styles from "@views/Product/styles.module.scss"
 import Container from "@components/Container"

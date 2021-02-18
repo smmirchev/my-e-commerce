@@ -15,5 +15,5 @@ function getApiServer() {
   if (process.env.NODE_ENV === "production") {
     return process.env.API_URL
   }
-  return process.env.API_URL || "netlify_URL_here"
+  return "https://evening-cove-72015.herokuapp.com/api/"
 }

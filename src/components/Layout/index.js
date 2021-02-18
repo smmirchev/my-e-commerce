@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Loader from "react-loader-spinner"
 import { useDispatch } from "react-redux"
 import PropTypes from "prop-types"
@@ -27,18 +27,14 @@ library.add(faSearch, faBars, faStar, faPlus, faMinus, faTimes)
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch()
-  const token = localStorage.getItem("e-commerce-token")
-  const [loading, setLoading] = useState(true)
+  const [token, setToken] = useState(null)
 
-  useState(() => {
+  useEffect(() => {
+    setToken(localStorage.getItem("e-commerce-token"))
     if (!!token) {
       dispatch(updateUser(token))
     }
-    setLoading(false)
   }, [])
-
-  if (loading)
-    return <Loader type="Puff" color="#00BFFF" height={300} width={300} />
 
   return (
     <div className={styles.app}>

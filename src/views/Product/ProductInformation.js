@@ -12,11 +12,15 @@ import { updateUser } from "@store/user"
 
 const ProductInformation = ({ titleEn, reviews, price, category, id }) => {
   const intl = useIntl()
-  const token = localStorage.getItem("e-commerce-token")
+  const [token, setToken] = useState(null)
   const user = useSelector(state => state.user)
   const dispatch = useDispatch()
   const [queryQuantity, setQueryQuantity] = useState(1)
   const regExp = new RegExp("^\\d+$")
+
+  useEffect(() => {
+    setToken(localStorage.getItem("e-commerce-token"))
+  }, [])
 
   const addToBasket = async () => {
     let quantity = 1

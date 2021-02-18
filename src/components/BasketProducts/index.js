@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useEffect, useState } from "react"
 import { useIntl } from "gatsby-plugin-intl"
 import axios from "axios"
 import Noty from "noty"
@@ -39,7 +39,11 @@ const BasketProducts = () => {
   const intl = useIntl()
   const user = useSelector(state => state.user)
   const dispatch = useDispatch()
-  const token = localStorage.getItem("e-commerce-token")
+  const [token, setToken] = useState(null)
+
+  useEffect(() => {
+    setToken(localStorage.getItem("e-commerce-token"))
+  }, [])
 
   const productsInBasket = products?.allMarkdownRemark?.edges?.filter(
     ({ node: { frontmatter: filteredProduct } }) => {
@@ -140,8 +144,12 @@ export default BasketProducts
 const BasketProduct = ({ name, image, imageAlt, price, id }) => {
   const intl = useIntl()
   const user = useSelector(state => state.user)
-  const token = localStorage.getItem("e-commerce-token")
   const dispatch = useDispatch()
+  const [token, setToken] = useState(null)
+
+  useEffect(() => {
+    setToken(localStorage.getItem("e-commerce-token"))
+  }, [])
 
   const getQuantity = () => {
     const foundProduct = user?.basket?.find(

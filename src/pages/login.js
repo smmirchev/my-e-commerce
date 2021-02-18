@@ -124,7 +124,7 @@ const LoginForm = ({
           onBlur={handleBlur}
           value={values?.password}
           name="password"
-          placeholder="Yur password..."
+          placeholder="Your password..."
         />
         <span>{errors?.password && touched?.password && errors?.password}</span>
       </div>

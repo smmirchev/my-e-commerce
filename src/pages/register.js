@@ -111,7 +111,7 @@ const RegisterForm = ({
           onBlur={handleBlur}
           value={values?.userName}
           name="username"
-          placeholder="Type in your username"
+          placeholder="Your username..."
         />
         <span>{errors?.username && touched?.username && errors?.username}</span>
       </div>
@@ -129,7 +129,7 @@ const RegisterForm = ({
           onBlur={handleBlur}
           value={values?.email}
           name="email"
-          placeholder="Type in your email"
+          placeholder="Your email..."
         />
         <span>{errors?.email && touched?.email && errors?.email}</span>
       </div>
@@ -147,7 +147,7 @@ const RegisterForm = ({
           onBlur={handleBlur}
           value={values?.password}
           name="password"
-          placeholder="Type in your password"
+          placeholder="Your password..."
         />
         <span>{errors?.password && touched?.password && errors?.password}</span>
       </div>
@@ -165,7 +165,7 @@ const RegisterForm = ({
           onBlur={handleBlur}
           value={values?.confirmPassword}
           name="confirmPassword"
-          placeholder="Cofirm your password"
+          placeholder="Cofirm your password..."
         />
         <span>
           {errors?.confirmPassword &&

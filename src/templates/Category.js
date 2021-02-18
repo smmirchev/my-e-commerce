@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import SEO from "@components/SEO"
 import Layout from "@components/Layout"
 import Products from "@views/Category/Products"
-import styles from "@views/category/styles.module.scss"
+import styles from "@views/Category/styles.module.scss"
 import Container from "@components/Container"
 
 const Category = ({ data }) => {

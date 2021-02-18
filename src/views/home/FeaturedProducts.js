@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby-plugin-intl"
 import Img from "gatsby-image/withIEPolyfill"
-import Reviews from "@components/reviews"
+import Reviews from "@components/Reviews"
 import styles from "@views/Category/styles.module.scss"
 
 const FeaturedProducts = () => {

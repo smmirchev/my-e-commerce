@@ -41,7 +41,7 @@ module.exports = {
           "@views": path.resolve(__dirname, "src/views"),
           "@store": path.resolve(__dirname, "src/store"),
         },
-        extensions: [],
+        extensions: ["js"],
       },
     },
     {

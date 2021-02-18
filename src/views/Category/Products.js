@@ -2,10 +2,10 @@ import React from "react"
 import { useIntl } from "react-intl"
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby-plugin-intl"
-import styles from "@views/category/styles.module.scss"
+import styles from "@views/Category/styles.module.scss"
 // import Img from "gatsby-image"
 import Img from "gatsby-image/withIEPolyfill"
-import Reviews from "@components/reviews"
+import Reviews from "@components/Reviews"
 
 const Products = ({ currentCategory, repeat = false }) => {
   const products = useStaticQuery(graphql`

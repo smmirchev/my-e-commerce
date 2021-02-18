@@ -77,7 +77,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   Product.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: `${node?.frontmatter?.categoryId}/${node?.frontmatter?.id}`,
+      path: `${node.frontmatter.categoryId}/${node.frontmatter.id}`,
       component: path.resolve(`./src/templates/Product.js`),
       context: {
         slug: node.fields.slug,

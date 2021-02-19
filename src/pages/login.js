@@ -1,12 +1,13 @@
 import { navigate } from "gatsby-plugin-intl"
 import { useIntl } from "react-intl"
 import jwtDecode from "jwt-decode"
+import Loader from "react-loader-spinner"
 import Noty from "noty"
 import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
 import { Formik } from "formik"
 import * as Yup from "yup"
-import React, { useEffect } from "react"
+import React, { useEffect, useState, Fragment } from "react"
 import SEO from "@components/SEO.js"
 import Layout from "@components/Layout/"
 import Container from "@components/Container/"
@@ -18,6 +19,7 @@ const Login = () => {
   const dispatch = useDispatch()
   const intl = useIntl()
   const user = useSelector(state => state.user)
+  const [loading, setLoading] = useState(false)
 
   const initialValues = {
     email: "",
@@ -26,6 +28,7 @@ const Login = () => {
 
   const handleSubmit = async (values, actions) => {
     try {
+      setLoading(true)
       const { data } = await axios.post(USER_LOGIN, values)
       localStorage.setItem("e-commerce-token", data)
 
@@ -42,6 +45,7 @@ const Login = () => {
         timeout: "3000",
       }).show()
     }
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -57,18 +61,26 @@ const Login = () => {
       />
       <Container>
         <div className={styles.loginRegisterWrapper}>
-          <h1>
-            {intl.formatMessage({
-              id: "page.login.h1",
-            })}
-          </h1>
-          <Formik
-            validationSchema={yupObjectSchema}
-            initialValues={initialValues}
-            onSubmit={handleSubmit}
-            render={props => <LoginForm {...props} formKey />}
-            validateOnChange={false}
-          />
+          {loading ? (
+            <div className={styles.loaderWrapper}>
+              <Loader type="Puff" color="#00BFFF" height={200} width={150} />
+            </div>
+          ) : (
+            <Fragment>
+              <h1>
+                {intl.formatMessage({
+                  id: "page.login.h1",
+                })}
+              </h1>
+              <Formik
+                validationSchema={yupObjectSchema}
+                initialValues={initialValues}
+                onSubmit={handleSubmit}
+                render={props => <LoginForm {...props} formKey />}
+                validateOnChange={false}
+              />
+            </Fragment>
+          )}
         </div>
       </Container>
     </Layout>

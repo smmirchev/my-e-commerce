@@ -10,7 +10,8 @@ export const COURSES = `${API_ROUTE}courses/`
 
 function getApiServer() {
   if (process.env.NODE_ENV === "development") {
-    return process.env.GATSBY_API_URL
+    return "https://evening-cove-72015.herokuapp.com/api/"
+    // return process.env.GATSBY_API_URL
   }
   if (process.env.NODE_ENV === "production") {
     return process.env.GATSBY_API_URL
